@@ -1,0 +1,29 @@
+{
+  "_fv": 24,
+  "_type": "food",
+  "definition": {
+    "renderType": 0,
+    "texture": "sugary_coffee",
+    "customModelName": "Normal",
+    "name": "Sugary Coffee",
+    "rarity": "COMMON",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "FOOD"
+    },
+    "stackSize": 1,
+    "nutritionalValue": 3,
+    "saturation": 1.5,
+    "eatingSpeed": 32,
+    "resultItem": {
+      "value": "CUSTOM:Mug"
+    },
+    "forDogs": false,
+    "isAlwaysEdible": true,
+    "animation": "drink",
+    "hasGlow": false,
+    "onEaten": {
+      "name": "SugaryCoffeeConsumed"
+    }
+  }
+}

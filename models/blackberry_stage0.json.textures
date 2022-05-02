@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "cross": "coffee_tree_stage0"
+      },
+      "name": "default"
+    }
+  }
+}

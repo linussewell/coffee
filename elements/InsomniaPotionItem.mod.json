@@ -1,0 +1,21 @@
+{
+  "_fv": 24,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Insomnia",
+    "splashName": "Splash potion of Insomnia",
+    "lingeringName": "Lingering potion of Insomnia",
+    "arrowName": "Arrow of Insomnia",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Insomnia"
+        },
+        "duration": 3600,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

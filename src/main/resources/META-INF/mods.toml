@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT License"
+
+[[mods]]
+modId="coffeeplus"
+version="Beta 3.1.2"
+displayName="Coffee+"
+credits="Thanks to MCreator for making this mod possible."
+displayURL="https://www.curseforge.com/minecraft/mc-mods/coffee-plus"
+authors="hyphen"
+description='''
+Adds coffee to Minecraft
+'''
+
+[[dependencies.coffeeplus]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

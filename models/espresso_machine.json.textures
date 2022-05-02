@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "66e46f9363aab871594cbad12def547a111": "66e46f9363aab871594cbad12def547a",
+        "minecraft_stone1": "minecraft_stone"
+      },
+      "name": "default"
+    }
+  }
+}

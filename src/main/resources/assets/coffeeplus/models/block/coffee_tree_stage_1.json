@@ -1,0 +1,8 @@
+{
+  "parent": "coffeeplus:custom/blackberry_stage1",
+  "textures": {
+    "all": "coffeeplus:blocks/coffee_tree_stage1",
+    "particle": "coffeeplus:blocks/coffee_tree_stage1",
+    "cross": "coffeeplus:blocks/coffee_tree_stage1"
+  }
+}

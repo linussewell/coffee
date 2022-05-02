@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smoking",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "coffeeplus:raw_coffee_bean"
+  },
+  "result": {
+    "item": "coffeeplus:roasted_coffee_bean"
+  }
+}

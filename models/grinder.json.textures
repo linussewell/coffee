@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "whiteconcrete": "whiteconcrete",
+        "3": "gray_concrete",
+        "5": "black_concrete",
+        "66e46f9363aab871594cbad12def547a111": "66e46f9363aab871594cbad12def547a",
+        "minecraft_stone1": "minecraft_stone"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -1,0 +1,684 @@
+{
+  "mod_elements": [
+    {
+      "name": "CoffeeMachine",
+      "type": "block",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_machine",
+      "path": "~/Coffee Machine"
+    },
+    {
+      "name": "CoffeeMachineCrafting",
+      "type": "recipe",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_machine_crafting",
+      "path": "~/Coffee Machine"
+    },
+    {
+      "name": "GroundCoffeeRecipe",
+      "type": "recipe",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ground_coffee_recipe",
+      "path": "~/Coffee Beans"
+    },
+    {
+      "name": "Mug",
+      "type": "item",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mug",
+      "path": "~/Coffee Mug"
+    },
+    {
+      "name": "FullCoffeeMug",
+      "type": "food",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "full_coffee_mug",
+      "path": "~/Coffee Mug"
+    },
+    {
+      "name": "CoffeeMugRecipe",
+      "type": "recipe",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_mug_recipe",
+      "path": "~/Coffee Mug"
+    },
+    {
+      "name": "GroundCoffee",
+      "type": "item",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ground_coffee",
+      "path": "~/Coffee Beans"
+    },
+    {
+      "name": "CoffeePlantationPortrait",
+      "type": "painting",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_plantation_portrait",
+      "path": "~/Extras"
+    },
+    {
+      "name": "BrewingProcedure",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "brewing_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Machine"
+    },
+    {
+      "name": "CoffeeMachineGUI",
+      "type": "gui",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_machine_gui",
+      "path": "~/Coffee Machine"
+    },
+    {
+      "name": "CoffeeConsumed",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_consumed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Coffee Mug"
+    },
+    {
+      "name": "RawCoffeeBean",
+      "type": "item",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_coffee_bean",
+      "path": "~/Coffee Beans"
+    },
+    {
+      "name": "RoastedCoffeeBean",
+      "type": "item",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roasted_coffee_bean",
+      "path": "~/Coffee Beans"
+    },
+    {
+      "name": "CoffeeRoasting",
+      "type": "recipe",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_roasting",
+      "path": "~/Coffee Beans"
+    },
+    {
+      "name": "CoffeeSmoking",
+      "type": "recipe",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_smoking",
+      "path": "~/Coffee Beans"
+    },
+    {
+      "name": "CoffeeTreeStage0",
+      "type": "block",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_0",
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "CoffeeTreeStage1",
+      "type": "block",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_1",
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "CoffeeTreeStage2",
+      "type": "block",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_2",
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "CoffeeTreeStage3",
+      "type": "block",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_3",
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "CoffeeTreeStage0EntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_0_entity_collides_in_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "PlantingCoffee",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "planting_coffee",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "BrewCoffeeAdvancement",
+      "type": "achievement",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "brew_coffee_advancement",
+      "path": "~/Coffee Machine"
+    },
+    {
+      "name": "CoffeeTreeStage2OnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_2_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "CoffeeTreeStage2UpdateTick",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_2_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "CoffeeTreeStage0BlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_0_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "CoffeeTreeStage0OnBlockRightClickedWithBonemeal",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_stage_0_on_block_right_clicked_with_bonemeal",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "CoffeeTreeSpawn",
+      "type": "structure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_tree_spawn",
+      "path": "~/Coffee Tree"
+    },
+    {
+      "name": "SugaryCoffeeConsumed",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugary_coffee_consumed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Sugary Coffee"
+    },
+    {
+      "name": "MilkyCoffeeConsumed",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "milky_coffee_consumed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Milky Coffee"
+    },
+    {
+      "name": "SugaryMilkyCoffeeConsumed",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugary_milky_coffee_consumed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Sugary Milky Coffee"
+    },
+    {
+      "name": "SugaryCoffee",
+      "type": "food",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugary_coffee",
+      "path": "~/Sugary Coffee"
+    },
+    {
+      "name": "MilkyCoffee",
+      "type": "food",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "milky_coffee",
+      "path": "~/Milky Coffee"
+    },
+    {
+      "name": "SugaryMilkyCoffee",
+      "type": "food",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugary_milky_coffee",
+      "path": "~/Sugary Milky Coffee"
+    },
+    {
+      "name": "SugaryCoffeeRecipe",
+      "type": "recipe",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugary_coffee_recipe",
+      "path": "~/Sugary Coffee"
+    },
+    {
+      "name": "MilkyCoffeeRecipe",
+      "type": "recipe",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "milky_coffee_recipe",
+      "path": "~/Milky Coffee"
+    },
+    {
+      "name": "SugaryMilkyCoffeeRecipe",
+      "type": "recipe",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugary_milky_coffee_recipe",
+      "path": "~/Sugary Milky Coffee"
+    },
+    {
+      "name": "CoffeeMachineEmptyMug",
+      "type": "block",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_machine_empty_mug",
+      "path": "~/Coffee Machine"
+    },
+    {
+      "name": "InsomniaPotionItem",
+      "type": "potion",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insomnia",
+      "path": "~/Insomnia"
+    },
+    {
+      "name": "InsomniaEffect",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insomnia_effect",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/Insomnia"
+    },
+    {
+      "name": "CoffeeGrinder",
+      "type": "block",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_grinder",
+      "path": "~/Coffee Grinder"
+    },
+    {
+      "name": "CoffeeGrinderRecipe",
+      "type": "recipe",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_grinder_recipe",
+      "path": "~/Coffee Grinder"
+    },
+    {
+      "name": "GrindingProcedure",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grinding_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Grinder"
+    },
+    {
+      "name": "GrinderGUI",
+      "type": "gui",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grinder_gui",
+      "path": "~/Coffee Grinder"
+    },
+    {
+      "name": "Insomnia",
+      "type": "potioneffect",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insomnia",
+      "path": "~/Insomnia"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "block.coffeeplus.coffee_machine": "Coffee Machine",
+      "item.minecraft.splash_potion.effect.insomnia": "Splash potion of Insomnia",
+      "item.coffeeplus.sugary_coffee": "Sugary Coffee",
+      "effect.insomnia": "Insomnia",
+      "item.minecraft.potion.effect.insomnia": "Insomnia",
+      "item.coffeeplus.milky_coffee": "Milky Coffee",
+      "item.coffeeplus.mug": "Empty Coffee Mug",
+      "item.coffeeplus.raw_coffee_bean": "Raw Coffee Bean",
+      "item.coffeeplus.ground_coffee": "Ground Coffee",
+      "item.coffeeplus.sugary_milky_coffee": "Sugary Milky Coffee",
+      "item.coffeeplus.full_coffee_mug": "Full Coffee Mug",
+      "advancements.brew_coffee_advancement.title": "Caffeine rush!",
+      "item.minecraft.tipped_arrow.effect.insomnia": "Arrow of Insomnia",
+      "block.coffeeplus.coffee_tree_stage_3": "Coffee Tree",
+      "block.coffeeplus.coffee_tree_stage_2": "Coffee Tree",
+      "advancements.brew_coffee_advancement.descr": "Drink coffee for the first time",
+      "item.minecraft.lingering_potion.effect.insomnia": "Lingering potion of Insomnia",
+      "block.coffeeplus.coffee_tree_stage_1": "Coffee Tree",
+      "block.coffeeplus.coffee_tree_stage_0": "Coffee Tree",
+      "block.coffeeplus.coffee_grinder": "Coffee Grinder",
+      "item.coffeeplus.roasted_coffee_bean": "Roasted Coffee Bean",
+      "block.coffeeplus.coffee_machine_empty_mug": "Coffee Machine Empty Mug"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Coffee Machine",
+        "children": []
+      },
+      {
+        "name": "Extras",
+        "children": []
+      },
+      {
+        "name": "Coffee Beans",
+        "children": []
+      },
+      {
+        "name": "Coffee Mug",
+        "children": []
+      },
+      {
+        "name": "Sugary Coffee",
+        "children": []
+      },
+      {
+        "name": "Milky Coffee",
+        "children": []
+      },
+      {
+        "name": "Sugary Milky Coffee",
+        "children": []
+      },
+      {
+        "name": "Coffee Tree",
+        "children": []
+      },
+      {
+        "name": "Coffee Grinder",
+        "children": []
+      },
+      {
+        "name": "Insomnia",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "coffeeplus",
+    "modName": "Coffee+",
+    "version": "Beta 3.1.2",
+    "description": "Adds coffee to Minecraft",
+    "author": "hyphen",
+    "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/coffee-plus",
+    "license": "MIT License",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "credits": "Thanks to MCreator for making this mod possible.",
+    "modElementsPackage": "net.mcreator.coffeeplus",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100354000
+}

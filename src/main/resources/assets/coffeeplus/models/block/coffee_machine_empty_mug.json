@@ -1,0 +1,10 @@
+{
+  "parent": "coffeeplus:custom/coffeemachineemptymug",
+  "textures": {
+    "all": "coffeeplus:blocks/66e46f9363aab871594cbad12def547a",
+    "particle": "coffeeplus:blocks/66e46f9363aab871594cbad12def547a",
+    "whiteconcrete": "coffeeplus:blocks/whiteconcrete",
+    "66e46f9363aab871594cbad12def547a111": "coffeeplus:blocks/66e46f9363aab871594cbad12def547a",
+    "minecraft_stone1": "coffeeplus:blocks/minecraft_stone"
+  }
+}

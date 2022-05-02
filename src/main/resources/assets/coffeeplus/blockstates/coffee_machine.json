@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "coffeeplus:block/coffee_machine"
+    },
+    "facing=east": {
+      "model": "coffeeplus:block/coffee_machine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "coffeeplus:block/coffee_machine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "coffeeplus:block/coffee_machine",
+      "y": 270
+    }
+  }
+}
