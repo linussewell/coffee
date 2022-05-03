@@ -4,53 +4,25 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.BlockPos;
 
-import net.mcreator.coffeeplus.item.RoastedCoffeeBeanItem;
-import net.mcreator.coffeeplus.item.GroundCoffeeItem;
-import net.mcreator.coffeeplus.CoffeeplusMod;
+import net.mcreator.coffeeplus.init.CoffeeplusModItems;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.Map;
 
 public class GrindingProcedureProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				CoffeeplusMod.LOGGER.warn("Failed to load dependency world for procedure GrindingProcedure!");
-			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				CoffeeplusMod.LOGGER.warn("Failed to load dependency x for procedure GrindingProcedure!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				CoffeeplusMod.LOGGER.warn("Failed to load dependency y for procedure GrindingProcedure!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				CoffeeplusMod.LOGGER.warn("Failed to load dependency z for procedure GrindingProcedure!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
+	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if ((new Object() {
-			public ItemStack getItemStack(BlockPos pos, int sltid) {
+			public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int sltid) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				TileEntity _ent = world.getTileEntity(pos);
+				BlockEntity _ent = world.getBlockEntity(pos);
 				if (_ent != null) {
 					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						_retval.set(capability.getStackInSlot(sltid).copy());
@@ -58,10 +30,10 @@ public class GrindingProcedureProcedure {
 				}
 				return _retval.get();
 			}
-		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == RoastedCoffeeBeanItem.block && (new Object() {
-			public int getAmount(IWorld world, BlockPos pos, int sltid) {
+		}.getItemStack(world, new BlockPos((int) x, (int) y, (int) z), 0)).getItem() == CoffeeplusModItems.ROASTED_COFFEE_BEAN && (new Object() {
+			public int getAmount(LevelAccessor world, BlockPos pos, int sltid) {
 				AtomicInteger _retval = new AtomicInteger(0);
-				TileEntity _ent = world.getTileEntity(pos);
+				BlockEntity _ent = world.getBlockEntity(pos);
 				if (_ent != null) {
 					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						_retval.set(capability.getStackInSlot(sltid).getCount());
@@ -69,10 +41,10 @@ public class GrindingProcedureProcedure {
 				}
 				return _retval.get();
 			}
-		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1)) == 0 || (new Object() {
-			public ItemStack getItemStack(BlockPos pos, int sltid) {
+		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), 1) == 0 || (new Object() {
+			public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int sltid) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				TileEntity _ent = world.getTileEntity(pos);
+				BlockEntity _ent = world.getBlockEntity(pos);
 				if (_ent != null) {
 					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						_retval.set(capability.getStackInSlot(sltid).copy());
@@ -80,12 +52,12 @@ public class GrindingProcedureProcedure {
 				}
 				return _retval.get();
 			}
-		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == GroundCoffeeItem.block)) {
+		}.getItemStack(world, new BlockPos((int) x, (int) y, (int) z), 1)).getItem() == CoffeeplusModItems.GROUND_COFFEE)) {
 			{
-				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+				BlockEntity _ent = world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z));
 				if (_ent != null) {
-					final int _sltid = (int) (0);
-					final int _amount = (int) 1;
+					final int _sltid = 0;
+					final int _amount = 1;
 					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						if (capability instanceof IItemHandlerModifiable) {
 							ItemStack _stk = capability.getStackInSlot(_sltid).copy();
@@ -96,14 +68,14 @@ public class GrindingProcedureProcedure {
 				}
 			}
 			{
-				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+				BlockEntity _ent = world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z));
 				if (_ent != null) {
-					final int _sltid = (int) (1);
-					final ItemStack _setstack = new ItemStack(GroundCoffeeItem.block);
+					final int _sltid = 1;
+					final ItemStack _setstack = new ItemStack(CoffeeplusModItems.GROUND_COFFEE);
 					_setstack.setCount((int) (new Object() {
-						public int getAmount(IWorld world, BlockPos pos, int sltid) {
+						public int getAmount(LevelAccessor world, BlockPos pos, int sltid) {
 							AtomicInteger _retval = new AtomicInteger(0);
-							TileEntity _ent = world.getTileEntity(pos);
+							BlockEntity _ent = world.getBlockEntity(pos);
 							if (_ent != null) {
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									_retval.set(capability.getStackInSlot(sltid).getCount());
@@ -111,7 +83,7 @@ public class GrindingProcedureProcedure {
 							}
 							return _retval.get();
 						}
-					}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1)) + 1));
+					}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), 1) + 1));
 					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						if (capability instanceof IItemHandlerModifiable) {
 							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -119,14 +91,14 @@ public class GrindingProcedureProcedure {
 					});
 				}
 			}
-			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.dispenser.dispense")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1);
-			} else {
-				((World) world).playSound(x, y, z,
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.dispenser.dispense")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.dispenser.dispense")), SoundSource.NEUTRAL, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.dispenser.dispense")),
+							SoundSource.NEUTRAL, 1, 1, false);
+				}
 			}
 		}
 	}

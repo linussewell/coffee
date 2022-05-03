@@ -1,29 +1,21 @@
 package net.mcreator.coffeeplus.procedures;
 
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 
-import net.mcreator.coffeeplus.potion.InsomniaPotionEffect;
-import net.mcreator.coffeeplus.CoffeeplusMod;
-
-import java.util.Map;
+import net.mcreator.coffeeplus.init.CoffeeplusModMobEffects;
 
 public class SugaryCoffeeConsumedProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				CoffeeplusMod.LOGGER.warn("Failed to load dependency entity for procedure SugaryCoffeeConsumed!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 240, (int) 2, (false), (false)));
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 240, (int) 0, (false), (false)));
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(InsomniaPotionEffect.potion, (int) 1800, (int) 0, (false), (false)));
+		if (entity instanceof LivingEntity _entity)
+			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 240, 2, (false), (false)));
+		if (entity instanceof LivingEntity _entity)
+			_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 240, 0, (false), (false)));
+		if (entity instanceof LivingEntity _entity)
+			_entity.addEffect(new MobEffectInstance(CoffeeplusModMobEffects.INSOMNIA, 1800, 0, (false), (false)));
 	}
 }
