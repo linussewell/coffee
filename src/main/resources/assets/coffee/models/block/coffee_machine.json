@@ -1,0 +1,10 @@
+{
+  "parent": "coffee:custom/fixedcoffeemachine",
+  "textures": {
+    "all": "coffee:blocks/66e46f9363aab871594cbad12def547a",
+    "particle": "coffee:blocks/66e46f9363aab871594cbad12def547a",
+    "whiteconcrete": "coffee:blocks/whiteconcrete",
+    "66e46f9363aab871594cbad12def547a111": "coffee:blocks/66e46f9363aab871594cbad12def547a",
+    "minecraft_stone1": "coffee:blocks/minecraft_stone"
+  }
+}

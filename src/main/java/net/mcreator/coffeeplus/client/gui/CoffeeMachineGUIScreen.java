@@ -13,12 +13,15 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.coffeeplus.world.inventory.CoffeeMachineGUIMenu;
 import net.mcreator.coffeeplus.network.CoffeeMachineGUIButtonMessage;
-import net.mcreator.coffeeplus.CoffeeplusMod;
+import net.mcreator.coffeeplus.CoffeeMod;
+
+import java.util.HashMap;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachineGUIMenu> {
+	private final static HashMap<String, Object> guistate = CoffeeMachineGUIMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
@@ -34,7 +37,7 @@ public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachin
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("coffeeplus:textures/coffee_machine_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("coffee:textures/screens/coffee_machine_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -51,7 +54,7 @@ public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachin
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("coffeeplus:textures/arrow.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/arrow.png"));
 		this.blit(ms, this.leftPos + 78, this.topPos + 25, 0, 0, 22, 15, 22, 15);
 
 		RenderSystem.disableBlend();
@@ -88,7 +91,7 @@ public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachin
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new Button(this.leftPos + 65, this.topPos + 50, 45, 20, new TextComponent("Brew"), e -> {
 			if (true) {
-				CoffeeplusMod.PACKET_HANDLER.sendToServer(new CoffeeMachineGUIButtonMessage(0, x, y, z));
+				CoffeeMod.PACKET_HANDLER.sendToServer(new CoffeeMachineGUIButtonMessage(0, x, y, z));
 				CoffeeMachineGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));

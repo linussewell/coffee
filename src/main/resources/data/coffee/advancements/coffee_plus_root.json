@@ -1,0 +1,23 @@
+{
+  "display": {
+    "background": "coffee:textures/screens/5plain.png",
+    "icon": {
+      "item": "coffee:mug"
+    },
+    "title": {
+      "translate": "advancements.coffee_plus_root.title"
+    },
+    "description": {
+      "translate": "advancements.coffee_plus_root.descr"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "coffee_plus_root": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

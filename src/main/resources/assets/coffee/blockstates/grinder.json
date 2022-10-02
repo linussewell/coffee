@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "coffee:block/grinder"
+    },
+    "facing=east": {
+      "model": "coffee:block/grinder",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "coffee:block/grinder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "coffee:block/grinder",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "coffee:block/grinder",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "coffee:block/grinder",
+      "x": 90
+    }
+  }
+}

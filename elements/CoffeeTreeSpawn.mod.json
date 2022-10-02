@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 33,
   "_type": "structure",
   "definition": {
     "structure": "coffeetree",
@@ -34,6 +34,6 @@
         "value": "mutated_extreme_hills"
       }
     ],
-    "ignoreBlocks": "STRUCTURE_BLOCK"
+    "ignoreBlocks": "AIR_AND_STRUCTURE_BLOCK"
   }
 }

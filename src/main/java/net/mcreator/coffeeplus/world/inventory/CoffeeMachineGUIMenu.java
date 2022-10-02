@@ -18,8 +18,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.coffeeplus.init.CoffeeplusModMenus;
-import net.mcreator.coffeeplus.init.CoffeeplusModItems;
+import net.mcreator.coffeeplus.init.CoffeeModMenus;
+import net.mcreator.coffeeplus.init.CoffeeModItems;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class CoffeeMachineGUIMenu extends AbstractContainerMenu implements Suppl
 	private boolean bound = false;
 
 	public CoffeeMachineGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(CoffeeplusModMenus.COFFEE_MACHINE_GUI, id);
+		super(CoffeeModMenus.COFFEE_MACHINE_GUI, id);
 		this.entity = inv.player;
 		this.world = inv.player.level;
 		this.internal = new ItemStackHandler(3);
@@ -79,13 +79,13 @@ public class CoffeeMachineGUIMenu extends AbstractContainerMenu implements Suppl
 		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 34, 26) {
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return (CoffeeplusModItems.GROUND_COFFEE == stack.getItem());
+				return (CoffeeModItems.GROUND_COFFEE.get() == stack.getItem());
 			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 34, 53) {
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return (CoffeeplusModItems.MUG == stack.getItem());
+				return (CoffeeModItems.MUG.get() == stack.getItem());
 			}
 		}));
 		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 124, 26) {

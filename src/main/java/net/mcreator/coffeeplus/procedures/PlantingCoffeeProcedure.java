@@ -20,8 +20,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.coffeeplus.init.CoffeeplusModItems;
-import net.mcreator.coffeeplus.init.CoffeeplusModBlocks;
+import net.mcreator.coffeeplus.init.CoffeeModItems;
+import net.mcreator.coffeeplus.init.CoffeeModBlocks;
 
 import javax.annotation.Nullable;
 
@@ -29,10 +29,9 @@ import javax.annotation.Nullable;
 public class PlantingCoffeeProcedure {
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-		Player entity = event.getPlayer();
-		if (event.getHand() != entity.getUsedItemHand())
+		if (event.getHand() != event.getPlayer().getUsedItemHand())
 			return;
-		execute(event, event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), entity);
+		execute(event, event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getPlayer());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -42,11 +41,12 @@ public class PlantingCoffeeProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.GRASS_BLOCK) {
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CoffeeplusModItems.RAW_COFFEE_BEAN
-					&& ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR
-							|| (world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.CAVE_AIR)) {
-				world.setBlock(new BlockPos((int) x, (int) (y + 1), (int) z), CoffeeplusModBlocks.COFFEE_TREE_STAGE_0.defaultBlockState(), 3);
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GRASS_BLOCK) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CoffeeModItems.RAW_COFFEE_BEAN
+					.get()
+					&& ((world.getBlockState(new BlockPos(x, y + 1, z))).getBlock() == Blocks.AIR
+							|| (world.getBlockState(new BlockPos(x, y + 1, z))).getBlock() == Blocks.CAVE_AIR)) {
+				world.setBlock(new BlockPos(x, y + 1, z), CoffeeModBlocks.COFFEE_TREE_STAGE_0.get().defaultBlockState(), 3);
 				if (new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -83,7 +83,7 @@ public class PlantingCoffeeProcedure {
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+						_level.playSound(null, new BlockPos(x, y, z),
 								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.sweet_berry_bush.place")), SoundSource.NEUTRAL, 1,
 								1);
 					} else {
@@ -92,11 +92,12 @@ public class PlantingCoffeeProcedure {
 					}
 				}
 			}
-		} else if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIRT) {
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CoffeeplusModItems.RAW_COFFEE_BEAN
-					&& ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR
-							|| (world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.CAVE_AIR)) {
-				world.setBlock(new BlockPos((int) x, (int) (y + 1), (int) z), CoffeeplusModBlocks.COFFEE_TREE_STAGE_0.defaultBlockState(), 3);
+		} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIRT) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == CoffeeModItems.RAW_COFFEE_BEAN
+					.get()
+					&& ((world.getBlockState(new BlockPos(x, y + 1, z))).getBlock() == Blocks.AIR
+							|| (world.getBlockState(new BlockPos(x, y + 1, z))).getBlock() == Blocks.CAVE_AIR)) {
+				world.setBlock(new BlockPos(x, y + 1, z), CoffeeModBlocks.COFFEE_TREE_STAGE_0.get().defaultBlockState(), 3);
 				if (new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -133,7 +134,7 @@ public class PlantingCoffeeProcedure {
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+						_level.playSound(null, new BlockPos(x, y, z),
 								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.sweet_berry_bush.place")), SoundSource.NEUTRAL, 1,
 								1);
 					} else {

@@ -1,7 +1,7 @@
 
 package net.mcreator.coffeeplus.block;
 
-import net.minecraftforge.fmllegacy.network.NetworkHooks;
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -43,7 +43,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.mcreator.coffeeplus.world.inventory.CoffeeMachineGUIMenu;
-import net.mcreator.coffeeplus.init.CoffeeplusModBlocks;
+import net.mcreator.coffeeplus.init.CoffeeModBlocks;
 import net.mcreator.coffeeplus.block.entity.CoffeeMachineEmptyMugBlockEntity;
 
 import java.util.List;
@@ -58,10 +58,9 @@ public class CoffeeMachineEmptyMugBlock extends Block
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public CoffeeMachineEmptyMugBlock() {
-		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(3f, 30f).requiresCorrectToolForDrops().noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.METAL).strength(3f, 30f).requiresCorrectToolForDrops()
+				.noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
-		setRegistryName("coffee_machine_empty_mug");
 	}
 
 	@Override
@@ -79,6 +78,11 @@ public class CoffeeMachineEmptyMugBlock extends Block
 		builder.add(FACING);
 	}
 
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+	}
+
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
@@ -88,24 +92,13 @@ public class CoffeeMachineEmptyMugBlock extends Block
 	}
 
 	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		;
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
-	}
-
-	@Override
-	public MaterialColor defaultMaterialColor() {
-		return MaterialColor.METAL;
-	}
-
-	@Override
 	public PushReaction getPistonPushReaction(BlockState state) {
 		return PushReaction.BLOCK;
 	}
 
 	@Override
 	public boolean canHarvestBlock(BlockState state, BlockGetter world, BlockPos pos, Player player) {
-		if (player.getInventory().getSelected().getItem()instanceof TieredItem tieredItem)
+		if (player.getInventory().getSelected().getItem() instanceof TieredItem tieredItem)
 			return tieredItem.getTier().getLevel() >= 2;
 		return false;
 	}
@@ -183,6 +176,6 @@ public class CoffeeMachineEmptyMugBlock extends Block
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(CoffeeplusModBlocks.COFFEE_MACHINE_EMPTY_MUG, renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(CoffeeModBlocks.COFFEE_MACHINE_EMPTY_MUG.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

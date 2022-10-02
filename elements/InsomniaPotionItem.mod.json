@@ -1,8 +1,8 @@
 {
-  "_fv": 24,
+  "_fv": 33,
   "_type": "potion",
   "definition": {
-    "potionName": "Insomnia",
+    "potionName": "Potion of Insomnia",
     "splashName": "Splash potion of Insomnia",
     "lingeringName": "Lingering potion of Insomnia",
     "arrowName": "Arrow of Insomnia",

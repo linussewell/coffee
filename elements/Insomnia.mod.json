@@ -1,11 +1,11 @@
 {
-  "_fv": 24,
+  "_fv": 33,
   "_type": "potioneffect",
   "definition": {
     "effectName": "Insomnia",
-    "icon": "insomnia_clock.png",
+    "icon": "insomnia_bed.png",
     "color": {
-      "value": -14809599,
+      "value": -15127211,
       "falpha": 0.0
     },
     "isInstant": false,

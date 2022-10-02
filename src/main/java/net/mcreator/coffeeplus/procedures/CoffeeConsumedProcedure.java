@@ -5,7 +5,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 
-import net.mcreator.coffeeplus.init.CoffeeplusModMobEffects;
+import net.mcreator.coffeeplus.init.CoffeeModMobEffects;
 
 public class CoffeeConsumedProcedure {
 	public static void execute(Entity entity) {
@@ -14,6 +14,6 @@ public class CoffeeConsumedProcedure {
 		if (entity instanceof LivingEntity _entity)
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 240, 1, (false), (false)));
 		if (entity instanceof LivingEntity _entity)
-			_entity.addEffect(new MobEffectInstance(CoffeeplusModMobEffects.INSOMNIA, 1200, 0, (false), (false)));
+			_entity.addEffect(new MobEffectInstance(CoffeeModMobEffects.INSOMNIA.get(), 1200, 0, (false), (false)));
 	}
 }

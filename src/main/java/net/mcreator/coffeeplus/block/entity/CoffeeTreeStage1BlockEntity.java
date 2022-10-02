@@ -17,13 +17,12 @@ import net.minecraft.world.ContainerHelper;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.Connection;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.coffeeplus.init.CoffeeplusModBlockEntities;
+import net.mcreator.coffeeplus.init.CoffeeModBlockEntities;
 
 import javax.annotation.Nullable;
 
@@ -34,7 +33,7 @@ public class CoffeeTreeStage1BlockEntity extends RandomizableContainerBlockEntit
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public CoffeeTreeStage1BlockEntity(BlockPos position, BlockState state) {
-		super(CoffeeplusModBlockEntities.COFFEE_TREE_STAGE_1, position, state);
+		super(CoffeeModBlockEntities.COFFEE_TREE_STAGE_1.get(), position, state);
 	}
 
 	@Override
@@ -46,27 +45,21 @@ public class CoffeeTreeStage1BlockEntity extends RandomizableContainerBlockEntit
 	}
 
 	@Override
-	public CompoundTag save(CompoundTag compound) {
-		super.save(compound);
+	public void saveAdditional(CompoundTag compound) {
+		super.saveAdditional(compound);
 		if (!this.trySaveLootTable(compound)) {
 			ContainerHelper.saveAllItems(compound, this.stacks);
 		}
-		return compound;
 	}
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		return new ClientboundBlockEntityDataPacket(this.worldPosition, 0, this.getUpdateTag());
+		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
 	@Override
 	public CompoundTag getUpdateTag() {
-		return this.save(new CompoundTag());
-	}
-
-	@Override
-	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-		this.load(pkt.getTag());
+		return this.saveWithFullMetadata();
 	}
 
 	@Override

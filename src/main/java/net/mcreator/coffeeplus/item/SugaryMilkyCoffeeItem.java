@@ -1,26 +1,26 @@
 
 package net.mcreator.coffeeplus.item;
 
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 
 import net.mcreator.coffeeplus.procedures.SugaryMilkyCoffeeConsumedProcedure;
-import net.mcreator.coffeeplus.init.CoffeeplusModItems;
+import net.mcreator.coffeeplus.init.CoffeeModTabs;
+import net.mcreator.coffeeplus.init.CoffeeModItems;
 
 public class SugaryMilkyCoffeeItem extends Item {
 	public SugaryMilkyCoffeeItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(1).rarity(Rarity.COMMON)
+		super(new Item.Properties().tab(CoffeeModTabs.TAB_COFFEE_PLUS).stacksTo(1).rarity(Rarity.COMMON)
 				.food((new FoodProperties.Builder()).nutrition(3).saturationMod(1.5f).alwaysEat()
 
 						.build()));
-		setRegistryName("sugary_milky_coffee");
 	}
 
 	@Override
@@ -29,8 +29,13 @@ public class SugaryMilkyCoffeeItem extends Item {
 	}
 
 	@Override
+	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
+		return 0F;
+	}
+
+	@Override
 	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
-		ItemStack retval = new ItemStack(CoffeeplusModItems.MUG);
+		ItemStack retval = new ItemStack(CoffeeModItems.MUG.get());
 		super.finishUsingItem(itemstack, world, entity);
 		double x = entity.getX();
 		double y = entity.getY();

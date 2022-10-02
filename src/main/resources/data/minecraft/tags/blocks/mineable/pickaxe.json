@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "coffeeplus:coffee_machine",
-    "coffeeplus:coffee_machine_empty_mug",
-    "coffeeplus:coffee_grinder"
+    "coffee:coffee_machine",
+    "coffee:coffee_machine_empty_mug",
+    "coffee:grinder"
   ]
 }

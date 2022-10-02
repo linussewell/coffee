@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[37,)"
+loaderVersion="[40,)"
 license="MIT License"
 
 [[mods]]
-modId="coffeeplus"
-version="Beta 3.1.2"
+modId="coffee"
+version="4"
 displayName="Coffee+"
 credits="Thanks to MCreator for making this mod possible."
 displayURL="https://www.curseforge.com/minecraft/mc-mods/coffee-plus"
@@ -13,10 +13,10 @@ description='''
 Adds coffee to Minecraft
 '''
 
-[[dependencies.coffeeplus]]
+[[dependencies.coffee]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.17.1]"
+    versionRange="[1.18.2]"
     ordering="NONE"
     side="BOTH"
 

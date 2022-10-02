@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 33,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:CoffeeGrinder"
+      "value": "CUSTOM:Grinder"
     },
     "name": "coffee_grinder_recipe",
     "namespace": "mod"

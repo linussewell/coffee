@@ -1,7 +1,7 @@
 
 package net.mcreator.coffeeplus.network;
 
-import net.minecraftforge.fmllegacy.network.NetworkEvent;
+import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,7 +13,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.coffeeplus.world.inventory.CoffeeMachineGUIMenu;
 import net.mcreator.coffeeplus.procedures.BrewingProcedureProcedure;
-import net.mcreator.coffeeplus.CoffeeplusMod;
+import net.mcreator.coffeeplus.CoffeeMod;
 
 import java.util.function.Supplier;
 import java.util.HashMap;
@@ -70,7 +70,7 @@ public class CoffeeMachineGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		CoffeeplusMod.addNetworkMessage(CoffeeMachineGUIButtonMessage.class, CoffeeMachineGUIButtonMessage::buffer,
-				CoffeeMachineGUIButtonMessage::new, CoffeeMachineGUIButtonMessage::handler);
+		CoffeeMod.addNetworkMessage(CoffeeMachineGUIButtonMessage.class, CoffeeMachineGUIButtonMessage::buffer, CoffeeMachineGUIButtonMessage::new,
+				CoffeeMachineGUIButtonMessage::handler);
 	}
 }

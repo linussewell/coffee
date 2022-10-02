@@ -33,8 +33,8 @@ import net.mcreator.coffeeplus.procedures.CoffeeTreeStage2UpdateTickProcedure;
 import net.mcreator.coffeeplus.procedures.CoffeeTreeStage2OnBlockRightClickedProcedure;
 import net.mcreator.coffeeplus.procedures.CoffeeTreeStage0EntityCollidesInTheBlockProcedure;
 import net.mcreator.coffeeplus.procedures.CoffeeTreeStage0BlockDestroyedByPlayerProcedure;
-import net.mcreator.coffeeplus.init.CoffeeplusModItems;
-import net.mcreator.coffeeplus.init.CoffeeplusModBlocks;
+import net.mcreator.coffeeplus.init.CoffeeModItems;
+import net.mcreator.coffeeplus.init.CoffeeModBlocks;
 import net.mcreator.coffeeplus.block.entity.CoffeeTreeStage2BlockEntity;
 
 import java.util.Random;
@@ -44,9 +44,8 @@ public class CoffeeTreeStage2Block extends Block
 
 			EntityBlock {
 	public CoffeeTreeStage2Block() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.SWEET_BERRY_BUSH).instabreak().noCollission().noOcclusion().randomTicks()
-				.isRedstoneConductor((bs, br, bp) -> false).noDrops());
-		setRegistryName("coffee_tree_stage_2");
+		super(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT).sound(SoundType.SWEET_BERRY_BUSH).instabreak().noCollission()
+				.noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false).noDrops());
 	}
 
 	@Override
@@ -65,13 +64,8 @@ public class CoffeeTreeStage2Block extends Block
 	}
 
 	@Override
-	public ItemStack getPickBlock(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
-		return new ItemStack(CoffeeplusModItems.RAW_COFFEE_BEAN);
-	}
-
-	@Override
-	public MaterialColor defaultMaterialColor() {
-		return MaterialColor.PLANT;
+	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
+		return new ItemStack(CoffeeModItems.RAW_COFFEE_BEAN.get());
 	}
 
 	@Override
@@ -85,8 +79,8 @@ public class CoffeeTreeStage2Block extends Block
 	}
 
 	@Override
-	public boolean removedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
-		boolean retval = super.removedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
+	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
+		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
 		CoffeeTreeStage0BlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		return retval;
 	}
@@ -108,7 +102,7 @@ public class CoffeeTreeStage2Block extends Block
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
 
-		CoffeeTreeStage2OnBlockRightClickedProcedure.execute(world, x, y, z);
+		CoffeeTreeStage2OnBlockRightClickedProcedure.execute(world, x, y, z, entity);
 		return InteractionResult.SUCCESS;
 	}
 
@@ -132,7 +126,7 @@ public class CoffeeTreeStage2Block extends Block
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(CoffeeplusModBlocks.COFFEE_TREE_STAGE_2, renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(CoffeeModBlocks.COFFEE_TREE_STAGE_2.get(), renderType -> renderType == RenderType.cutout());
 	}
 
 }

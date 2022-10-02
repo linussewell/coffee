@@ -17,14 +17,13 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.Connection;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.coffeeplus.world.inventory.CoffeeMachineGUIMenu;
-import net.mcreator.coffeeplus.init.CoffeeplusModBlockEntities;
+import net.mcreator.coffeeplus.init.CoffeeModBlockEntities;
 
 import javax.annotation.Nullable;
 
@@ -37,7 +36,7 @@ public class CoffeeMachineEmptyMugBlockEntity extends RandomizableContainerBlock
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public CoffeeMachineEmptyMugBlockEntity(BlockPos position, BlockState state) {
-		super(CoffeeplusModBlockEntities.COFFEE_MACHINE_EMPTY_MUG, position, state);
+		super(CoffeeModBlockEntities.COFFEE_MACHINE_EMPTY_MUG.get(), position, state);
 	}
 
 	@Override
@@ -49,27 +48,21 @@ public class CoffeeMachineEmptyMugBlockEntity extends RandomizableContainerBlock
 	}
 
 	@Override
-	public CompoundTag save(CompoundTag compound) {
-		super.save(compound);
+	public void saveAdditional(CompoundTag compound) {
+		super.saveAdditional(compound);
 		if (!this.trySaveLootTable(compound)) {
 			ContainerHelper.saveAllItems(compound, this.stacks);
 		}
-		return compound;
 	}
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		return new ClientboundBlockEntityDataPacket(this.worldPosition, 0, this.getUpdateTag());
+		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
 	@Override
 	public CompoundTag getUpdateTag() {
-		return this.save(new CompoundTag());
-	}
-
-	@Override
-	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-		this.load(pkt.getTag());
+		return this.saveWithFullMetadata();
 	}
 
 	@Override

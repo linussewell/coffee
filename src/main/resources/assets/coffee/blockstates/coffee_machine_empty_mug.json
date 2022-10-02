@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "coffee:block/coffee_machine_empty_mug"
+    },
+    "facing=east": {
+      "model": "coffee:block/coffee_machine_empty_mug",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "coffee:block/coffee_machine_empty_mug",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "coffee:block/coffee_machine_empty_mug",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "coffee:custom/grinder",
+  "textures": {
+    "all": "coffee:blocks/66e46f9363aab871594cbad12def547a",
+    "particle": "coffee:blocks/66e46f9363aab871594cbad12def547a",
+    "whiteconcrete": "coffee:blocks/whiteconcrete",
+    "3": "coffee:blocks/gray_concrete",
+    "5": "coffee:blocks/black_concrete",
+    "66e46f9363aab871594cbad12def547a111": "coffee:blocks/66e46f9363aab871594cbad12def547a",
+    "minecraft_stone1": "coffee:blocks/minecraft_stone"
+  }
+}
