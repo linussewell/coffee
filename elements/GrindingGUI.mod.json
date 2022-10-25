@@ -29,7 +29,7 @@
           "image": "arrow.png",
           "use1Xscale": true,
           "name": "arrow.png",
-          "x": 204,
+          "x": 202,
           "y": 62
         }
       },
@@ -57,8 +57,8 @@
           "width": 45,
           "height": 20,
           "name": "Grind",
-          "x": 191,
-          "y": 87
+          "x": 190,
+          "y": 89
         }
       },
       {
@@ -71,6 +71,26 @@
           "x": 249,
           "y": 62
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "coffee_beans_blank.png",
+          "use1Xscale": false,
+          "name": "coffee_beans_blank.png",
+          "x": 160,
+          "y": 63
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ground_coffee_blank.png",
+          "use1Xscale": false,
+          "name": "ground_coffee_blank.png",
+          "x": 250,
+          "y": 63
+        }
       }
     ],
     "gridSettings": {
@@ -78,7 +98,7 @@
       "sy": 18,
       "ox": 11,
       "oy": 15,
-      "snapOnGrid": true
+      "snapOnGrid": false
     }
   }
 }

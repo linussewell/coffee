@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "hand_grinder_new",
+    "texture": "hand_grinder",
     "customModelName": "Normal",
     "name": "Hand Grinder",
     "rarity": "COMMON",

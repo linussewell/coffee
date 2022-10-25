@@ -55,7 +55,13 @@ public class GrindingGUIScreen extends AbstractContainerScreen<GrindingGUIMenu> 
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
 		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/arrow.png"));
-		this.blit(ms, this.leftPos + 78, this.topPos + 25, 0, 0, 22, 15, 22, 15);
+		this.blit(ms, this.leftPos + 76, this.topPos + 25, 0, 0, 22, 15, 22, 15);
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/coffee_beans_blank.png"));
+		this.blit(ms, this.leftPos + 34, this.topPos + 26, 0, 0, 16, 16, 16, 16);
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/ground_coffee_blank.png"));
+		this.blit(ms, this.leftPos + 124, this.topPos + 26, 0, 0, 16, 16, 16, 16);
 
 		RenderSystem.disableBlend();
 	}
@@ -89,7 +95,7 @@ public class GrindingGUIScreen extends AbstractContainerScreen<GrindingGUIMenu> 
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 65, this.topPos + 50, 45, 20, new TextComponent("Grind"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 64, this.topPos + 52, 45, 20, new TextComponent("Grind"), e -> {
 			if (true) {
 				CoffeeMod.PACKET_HANDLER.sendToServer(new GrindingGUIButtonMessage(0, x, y, z));
 				GrindingGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);

@@ -19,6 +19,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class BrewingProcedureProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
+		double posX = 0;
+		double drainValue = 0;
+		double posY = 0;
+		double posZ = 0;
 		if ((new Object() {
 			public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);

@@ -1,0 +1,83 @@
+{
+	"textures": {
+		"whiteconcrete": "white_concrete",
+		"66e46f9363aab871594cbad12def547a111": "iron_block",
+		"minecraft_stone1": "stone"
+	},
+	"elements": [
+		{
+			"name": "Base",
+			"from": [4, 0, 1],
+			"to": [12, 1, 15],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 1], "texture": "#minecraft_stone1"},
+				"east": {"uv": [0, 0, 14, 1], "texture": "#minecraft_stone1"},
+				"south": {"uv": [0, 0, 8, 1], "texture": "#minecraft_stone1"},
+				"west": {"uv": [0, 0, 14, 1], "texture": "#minecraft_stone1"},
+				"up": {"uv": [0, 0, 8, 14], "texture": "#minecraft_stone1"},
+				"down": {"uv": [0, 0, 8, 14], "texture": "#minecraft_stone1"}
+			}
+		},
+		{
+			"name": "Body",
+			"from": [4, 1, 7],
+			"to": [12, 15, 15],
+			"faces": {
+				"north": {"uv": [3, 1, 11, 15], "texture": "#66e46f9363aab871594cbad12def547a111"},
+				"east": {"uv": [3, 1, 11, 15], "texture": "#66e46f9363aab871594cbad12def547a111"},
+				"south": {"uv": [3, 1, 11, 15], "texture": "#66e46f9363aab871594cbad12def547a111"},
+				"west": {"uv": [4, 1, 12, 15], "texture": "#66e46f9363aab871594cbad12def547a111"},
+				"up": {"uv": [2, 4, 15, 13], "texture": "#66e46f9363aab871594cbad12def547a111"}
+			}
+		},
+		{
+			"name": "Head",
+			"from": [5, 10, 1],
+			"to": [11, 14, 7],
+			"faces": {
+				"north": {"uv": [1, 8, 7, 12], "texture": "#whiteconcrete"},
+				"east": {"uv": [2, 7, 8, 11], "texture": "#whiteconcrete"},
+				"west": {"uv": [0, 0, 6, 4], "texture": "#whiteconcrete"},
+				"up": {"uv": [0, 0, 6, 6], "texture": "#whiteconcrete"},
+				"down": {"uv": [0, 0, 6, 6], "texture": "#whiteconcrete"}
+			}
+		},
+		{
+			"name": "Nozzle",
+			"from": [7, 9, 3],
+			"to": [9, 10, 5],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 1], "texture": "#minecraft_stone1"},
+				"east": {"uv": [0, 0, 2, 1], "texture": "#minecraft_stone1"},
+				"south": {"uv": [0, 0, 2, 1], "texture": "#minecraft_stone1"},
+				"west": {"uv": [0, 0, 3, 1], "texture": "#minecraft_stone1"},
+				"down": {"uv": [0, 0, 4, 2], "texture": "#minecraft_stone1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -142.5, 0],
+			"scale": [0.62, 0.62, 0.62]
+		},
+		"fixed": {
+			"translation": [0, 0, -3.5]
+		}
+	}
+}

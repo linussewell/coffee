@@ -5,6 +5,10 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.PushReaction;
@@ -74,6 +78,17 @@ public class CoffeeMachineEmptyMugBlock extends Block
 	}
 
 	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
+		return switch (state.getValue(FACING)) {
+			default -> Shapes.or(box(5, 10, 9, 11, 14, 15), box(7, 9, 11, 9, 10, 13), box(4, 1, 1, 12, 15, 9), box(4, 0, 1, 12, 1, 15));
+			case NORTH -> Shapes.or(box(5, 10, 1, 11, 14, 7), box(7, 9, 3, 9, 10, 5), box(4, 1, 7, 12, 15, 15), box(4, 0, 1, 12, 1, 15));
+			case EAST -> Shapes.or(box(9, 10, 5, 15, 14, 11), box(11, 9, 7, 13, 10, 9), box(1, 1, 4, 9, 15, 12), box(1, 0, 4, 15, 1, 12));
+			case WEST -> Shapes.or(box(1, 10, 5, 7, 14, 11), box(3, 9, 7, 5, 10, 9), box(7, 1, 4, 15, 15, 12), box(1, 0, 4, 15, 1, 12));
+		};
+	}
+
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING);
 	}
@@ -89,6 +104,11 @@ public class CoffeeMachineEmptyMugBlock extends Block
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+	}
+
+	@Override
+	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
+		return new ItemStack(CoffeeModBlocks.COFFEE_MACHINE.get());
 	}
 
 	@Override
@@ -108,7 +128,7 @@ public class CoffeeMachineEmptyMugBlock extends Block
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
-		return Collections.singletonList(new ItemStack(this, 1));
+		return Collections.singletonList(new ItemStack(CoffeeModBlocks.COFFEE_MACHINE.get()));
 	}
 
 	@Override
@@ -178,4 +198,5 @@ public class CoffeeMachineEmptyMugBlock extends Block
 	public static void registerRenderLayer() {
 		ItemBlockRenderTypes.setRenderLayer(CoffeeModBlocks.COFFEE_MACHINE_EMPTY_MUG.get(), renderType -> renderType == RenderType.cutout());
 	}
+
 }

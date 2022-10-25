@@ -4,13 +4,14 @@ license="MIT License"
 
 [[mods]]
 modId="coffee"
-version="4"
+version="0.0.7"
 displayName="Coffee+"
 credits="Thanks to MCreator for making this mod possible."
 displayURL="https://www.curseforge.com/minecraft/mc-mods/coffee-plus"
+logoFile="logo.png"
 authors="hyphen"
 description='''
-Adds coffee to Minecraft
+Grow, harvest, and drink your very own coffee.
 '''
 
 [[dependencies.coffee]]

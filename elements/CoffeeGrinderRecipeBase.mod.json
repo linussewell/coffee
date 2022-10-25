@@ -10,7 +10,7 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "Blocks.STAINED_GLASS"
+        "value": "Blocks.GLASS"
       },
       {
         "value": "Items.IRON_INGOT"
@@ -40,7 +40,7 @@
     "recipeReturnStack": {
       "value": "CUSTOM:Grinder"
     },
-    "name": "coffee_grinder_recipe",
+    "name": "coffee_grinder_recipe_base",
     "namespace": "mod"
   }
 }

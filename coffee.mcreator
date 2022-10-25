@@ -12,7 +12,7 @@
     {
       "name": "CoffeeMachineCrafting",
       "type": "recipe",
-      "sortid": 2,
+      "sortid": 13,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_machine_crafting",
@@ -21,7 +21,7 @@
     {
       "name": "Mug",
       "type": "item",
-      "sortid": 9,
+      "sortid": 5,
       "compiles": true,
       "locked_code": false,
       "registry_name": "mug",
@@ -30,7 +30,7 @@
     {
       "name": "GroundCoffee",
       "type": "item",
-      "sortid": 15,
+      "sortid": 12,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ground_coffee",
@@ -39,7 +39,7 @@
     {
       "name": "BrewingProcedure",
       "type": "procedure",
-      "sortid": 21,
+      "sortid": 14,
       "compiles": true,
       "locked_code": false,
       "registry_name": "brewing_procedure",
@@ -68,7 +68,7 @@
     {
       "name": "CoffeeMachineGUI",
       "type": "gui",
-      "sortid": 22,
+      "sortid": 15,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_machine_gui",
@@ -77,7 +77,7 @@
     {
       "name": "CoffeeConsumed",
       "type": "procedure",
-      "sortid": 23,
+      "sortid": 16,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_consumed",
@@ -94,7 +94,7 @@
     {
       "name": "RawCoffeeBean",
       "type": "item",
-      "sortid": 24,
+      "sortid": 10,
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_coffee_bean",
@@ -103,7 +103,7 @@
     {
       "name": "RoastedCoffeeBean",
       "type": "item",
-      "sortid": 25,
+      "sortid": 11,
       "compiles": true,
       "locked_code": false,
       "registry_name": "roasted_coffee_bean",
@@ -112,7 +112,7 @@
     {
       "name": "CoffeeRoasting",
       "type": "recipe",
-      "sortid": 26,
+      "sortid": 17,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_roasting",
@@ -121,7 +121,7 @@
     {
       "name": "CoffeeSmoking",
       "type": "recipe",
-      "sortid": 27,
+      "sortid": 18,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_smoking",
@@ -130,7 +130,7 @@
     {
       "name": "CoffeeTreeStage0",
       "type": "block",
-      "sortid": 28,
+      "sortid": 19,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_0",
@@ -139,7 +139,7 @@
     {
       "name": "CoffeeTreeStage1",
       "type": "block",
-      "sortid": 29,
+      "sortid": 20,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_1",
@@ -148,7 +148,7 @@
     {
       "name": "CoffeeTreeStage2",
       "type": "block",
-      "sortid": 30,
+      "sortid": 21,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_2",
@@ -157,7 +157,7 @@
     {
       "name": "CoffeeTreeStage3",
       "type": "block",
-      "sortid": 31,
+      "sortid": 22,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_3",
@@ -166,7 +166,7 @@
     {
       "name": "CoffeeTreeStage0EntityCollidesInTheBlock",
       "type": "procedure",
-      "sortid": 33,
+      "sortid": 23,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_0_entity_collides_in_the_block",
@@ -183,7 +183,7 @@
     {
       "name": "PlantingCoffee",
       "type": "procedure",
-      "sortid": 34,
+      "sortid": 24,
       "compiles": true,
       "locked_code": false,
       "registry_name": "planting_coffee",
@@ -216,7 +216,7 @@
     {
       "name": "BrewCoffeeAdvancement",
       "type": "achievement",
-      "sortid": 36,
+      "sortid": 25,
       "compiles": true,
       "locked_code": false,
       "registry_name": "brew_coffee_advancement",
@@ -225,7 +225,7 @@
     {
       "name": "CoffeeTreeStage2OnBlockRightClicked",
       "type": "procedure",
-      "sortid": 37,
+      "sortid": 26,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_2_on_block_right_clicked",
@@ -258,7 +258,7 @@
     {
       "name": "CoffeeTreeStage2UpdateTick",
       "type": "procedure",
-      "sortid": 38,
+      "sortid": 27,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_2_update_tick",
@@ -287,7 +287,7 @@
     {
       "name": "CoffeeTreeStage0BlockDestroyedByPlayer",
       "type": "procedure",
-      "sortid": 39,
+      "sortid": 28,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_0_block_destroyed_by_player",
@@ -316,7 +316,7 @@
     {
       "name": "CoffeeTreeStage0OnBlockRightClickedWithBonemeal",
       "type": "procedure",
-      "sortid": 40,
+      "sortid": 29,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_0_on_block_right_clicked_with_bonemeal",
@@ -349,7 +349,7 @@
     {
       "name": "CoffeeTreeSpawn",
       "type": "structure",
-      "sortid": 41,
+      "sortid": 30,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_spawn",
@@ -358,7 +358,7 @@
     {
       "name": "SugaryCoffeeConsumed",
       "type": "procedure",
-      "sortid": 42,
+      "sortid": 31,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_coffee_consumed",
@@ -375,7 +375,7 @@
     {
       "name": "MilkyCoffeeConsumed",
       "type": "procedure",
-      "sortid": 43,
+      "sortid": 32,
       "compiles": true,
       "locked_code": false,
       "registry_name": "milky_coffee_consumed",
@@ -392,7 +392,7 @@
     {
       "name": "SugaryMilkyCoffeeConsumed",
       "type": "procedure",
-      "sortid": 44,
+      "sortid": 33,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_milky_coffee_consumed",
@@ -409,7 +409,7 @@
     {
       "name": "SugaryCoffeeRecipe",
       "type": "recipe",
-      "sortid": 48,
+      "sortid": 34,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_coffee_recipe",
@@ -418,7 +418,7 @@
     {
       "name": "MilkyCoffeeRecipe",
       "type": "recipe",
-      "sortid": 49,
+      "sortid": 35,
       "compiles": true,
       "locked_code": false,
       "registry_name": "milky_coffee_recipe",
@@ -427,7 +427,7 @@
     {
       "name": "SugaryMilkyCoffeeRecipe",
       "type": "recipe",
-      "sortid": 50,
+      "sortid": 36,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_milky_coffee_recipe",
@@ -436,7 +436,7 @@
     {
       "name": "CoffeeMachineEmptyMug",
       "type": "block",
-      "sortid": 51,
+      "sortid": 37,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_machine_empty_mug",
@@ -445,7 +445,7 @@
     {
       "name": "InsomniaPotionItem",
       "type": "potion",
-      "sortid": 53,
+      "sortid": 38,
       "compiles": true,
       "locked_code": false,
       "registry_name": "insomnia",
@@ -454,7 +454,7 @@
     {
       "name": "InsomniaEffect",
       "type": "procedure",
-      "sortid": 54,
+      "sortid": 39,
       "compiles": true,
       "locked_code": false,
       "registry_name": "insomnia_effect",
@@ -487,7 +487,7 @@
     {
       "name": "CoffeeGrinderRecipe",
       "type": "recipe",
-      "sortid": 56,
+      "sortid": 40,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_grinder_recipe",
@@ -496,7 +496,7 @@
     {
       "name": "GrindingProcedure",
       "type": "procedure",
-      "sortid": 57,
+      "sortid": 41,
       "compiles": true,
       "locked_code": false,
       "registry_name": "grinding_procedure",
@@ -525,7 +525,7 @@
     {
       "name": "Insomnia",
       "type": "potioneffect",
-      "sortid": 59,
+      "sortid": 42,
       "compiles": true,
       "locked_code": false,
       "registry_name": "insomnia",
@@ -534,7 +534,7 @@
     {
       "name": "FullCoffeeMug",
       "type": "item",
-      "sortid": 60,
+      "sortid": 6,
       "compiles": true,
       "locked_code": false,
       "registry_name": "full_coffee_mug",
@@ -543,7 +543,7 @@
     {
       "name": "SugaryCoffee",
       "type": "item",
-      "sortid": 61,
+      "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_coffee",
@@ -552,7 +552,7 @@
     {
       "name": "MilkyCoffee",
       "type": "item",
-      "sortid": 62,
+      "sortid": 8,
       "compiles": true,
       "locked_code": false,
       "registry_name": "milky_coffee",
@@ -561,7 +561,7 @@
     {
       "name": "SugaryMilkyCoffee",
       "type": "item",
-      "sortid": 63,
+      "sortid": 9,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_milky_coffee",
@@ -570,7 +570,7 @@
     {
       "name": "HandGrinder",
       "type": "item",
-      "sortid": 64,
+      "sortid": 3,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hand_grinder",
@@ -579,7 +579,7 @@
     {
       "name": "HandGroundCoffee",
       "type": "recipe",
-      "sortid": 65,
+      "sortid": 43,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hand_ground_coffee",
@@ -588,7 +588,7 @@
     {
       "name": "HandGrinderRecipe",
       "type": "recipe",
-      "sortid": 66,
+      "sortid": 44,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hand_grinder_recipe",
@@ -597,7 +597,7 @@
     {
       "name": "Grinder",
       "type": "block",
-      "sortid": 67,
+      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "registry_name": "grinder",
@@ -606,7 +606,7 @@
     {
       "name": "GrindingGUI",
       "type": "gui",
-      "sortid": 68,
+      "sortid": 45,
       "compiles": true,
       "locked_code": false,
       "registry_name": "grinding_gui",
@@ -615,7 +615,7 @@
     {
       "name": "CoffeePlus",
       "type": "tab",
-      "sortid": 69,
+      "sortid": 46,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_plus",
@@ -624,7 +624,7 @@
     {
       "name": "RawCoffeeTrade",
       "type": "villagertrade",
-      "sortid": 70,
+      "sortid": 47,
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_coffee_trade",
@@ -633,7 +633,7 @@
     {
       "name": "CoffeePlusRoot",
       "type": "achievement",
-      "sortid": 71,
+      "sortid": 48,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_plus_root",
@@ -642,7 +642,7 @@
     {
       "name": "ClayMug",
       "type": "item",
-      "sortid": 72,
+      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "registry_name": "clay_mug",
@@ -651,7 +651,7 @@
     {
       "name": "ClayMugRecipe",
       "type": "recipe",
-      "sortid": 73,
+      "sortid": 49,
       "compiles": true,
       "locked_code": false,
       "registry_name": "clay_mug_recipe",
@@ -660,7 +660,7 @@
     {
       "name": "MakeMugAdvancement",
       "type": "achievement",
-      "sortid": 75,
+      "sortid": 50,
       "compiles": true,
       "locked_code": false,
       "registry_name": "make_mug_advancement",
@@ -669,11 +669,87 @@
     {
       "name": "ClayMugSmelting",
       "type": "recipe",
-      "sortid": 76,
+      "sortid": 51,
       "compiles": true,
       "locked_code": false,
       "registry_name": "clay_mug_smelting",
       "path": "~/Clay Mug"
+    },
+    {
+      "name": "CoffeeGrinderRecipeTinted",
+      "type": "recipe",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_grinder_recipe_tinted",
+      "path": "~/Coffee Grinder"
+    },
+    {
+      "name": "CoffeeGrinderRecipeBase",
+      "type": "recipe",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_grinder_recipe_base",
+      "path": "~/Coffee Grinder"
+    },
+    {
+      "name": "SwapItemModel",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "swap_item_model",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Machine"
+    },
+    {
+      "name": "SwapModelBack",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "swap_model_back",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Coffee Machine"
     }
   ],
   "variable_elements": [],
@@ -734,7 +810,12 @@
     "children": [
       {
         "name": "Coffee Machine",
-        "children": []
+        "children": [
+          {
+            "name": "WaterTank",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Coffee Beans",
@@ -785,13 +866,14 @@
   "workspaceSettings": {
     "modid": "coffee",
     "modName": "Coffee+",
-    "version": "Beta 4",
-    "description": "Adds coffee to Minecraft",
+    "version": "0.0.7",
+    "description": "Grow, harvest, and drink your very own coffee.",
     "author": "hyphen",
     "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/coffee-plus",
     "license": "MIT License",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
+    "modPicture": "coffeeplus5",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],

@@ -20,16 +20,43 @@
     "isItemTinted": false,
     "hasTransparency": true,
     "connectedSides": false,
-    "transparencyType": "SOLID",
+    "transparencyType": "CUTOUT",
     "disableOffset": false,
     "boundingBoxes": [
       {
-        "mx": 0.0,
+        "mx": 5.0,
+        "my": 10.0,
+        "mz": 1.0,
+        "Mx": 11.0,
+        "My": 14.0,
+        "Mz": 7.0,
+        "subtract": false
+      },
+      {
+        "mx": 7.0,
+        "my": 9.0,
+        "mz": 3.0,
+        "Mx": 9.0,
+        "My": 10.0,
+        "Mz": 5.0,
+        "subtract": false
+      },
+      {
+        "mx": 4.0,
+        "my": 1.0,
+        "mz": 7.0,
+        "Mx": 12.0,
+        "My": 15.0,
+        "Mz": 15.0,
+        "subtract": false
+      },
+      {
+        "mx": 4.0,
         "my": 0.0,
-        "mz": 0.0,
-        "Mx": 16.0,
-        "My": 16.0,
-        "Mz": 16.0,
+        "mz": 1.0,
+        "Mx": 12.0,
+        "My": 1.0,
+        "Mz": 15.0,
         "subtract": false
       }
     ],
@@ -44,7 +71,7 @@
     },
     "destroyTool": "pickaxe",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:CoffeeMachine"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -60,9 +87,12 @@
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
     "colorOnMap": "IRON",
     "creativePickItem": {
-      "value": ""
+      "value": "CUSTOM:CoffeeMachine"
     },
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",
@@ -77,6 +107,21 @@
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "METAL"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
     },
     "luminance": 0,
     "unbreakable": false,

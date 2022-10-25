@@ -5,6 +5,9 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.PushReaction;
@@ -43,7 +46,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.mcreator.coffeeplus.world.inventory.CoffeeMachineGUIMenu;
-import net.mcreator.coffeeplus.procedures.BrewingProcedureProcedure;
 import net.mcreator.coffeeplus.init.CoffeeModBlocks;
 import net.mcreator.coffeeplus.block.entity.CoffeeMachineBlockEntity;
 
@@ -75,6 +77,17 @@ public class CoffeeMachineBlock extends Block
 	}
 
 	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
+		return switch (state.getValue(FACING)) {
+			default -> Shapes.or(box(5, 10, 9, 11, 14, 15), box(7, 9, 11, 9, 10, 13), box(4, 1, 1, 12, 15, 9), box(4, 0, 1, 12, 1, 15));
+			case NORTH -> Shapes.or(box(5, 10, 1, 11, 14, 7), box(7, 9, 3, 9, 10, 5), box(4, 1, 7, 12, 15, 15), box(4, 0, 1, 12, 1, 15));
+			case EAST -> Shapes.or(box(9, 10, 5, 15, 14, 11), box(11, 9, 7, 13, 10, 9), box(1, 1, 4, 9, 15, 12), box(1, 0, 4, 15, 1, 12));
+			case WEST -> Shapes.or(box(1, 10, 5, 7, 14, 11), box(3, 9, 7, 5, 10, 9), box(7, 1, 4, 15, 15, 12), box(1, 0, 4, 15, 1, 12));
+		};
+	}
+
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING);
 	}
@@ -94,7 +107,7 @@ public class CoffeeMachineBlock extends Block
 
 	@Override
 	public PushReaction getPistonPushReaction(BlockState state) {
-		return PushReaction.BLOCK;
+		return PushReaction.DESTROY;
 	}
 
 	@Override
@@ -110,14 +123,6 @@ public class CoffeeMachineBlock extends Block
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
 		return Collections.singletonList(new ItemStack(this, 1));
-	}
-
-	@Override
-	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
-		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		if (world.getBestNeighborSignal(pos) > 0) {
-			BrewingProcedureProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-		}
 	}
 
 	@Override
@@ -187,4 +192,5 @@ public class CoffeeMachineBlock extends Block
 	public static void registerRenderLayer() {
 		ItemBlockRenderTypes.setRenderLayer(CoffeeModBlocks.COFFEE_MACHINE.get(), renderType -> renderType == RenderType.cutout());
 	}
+
 }

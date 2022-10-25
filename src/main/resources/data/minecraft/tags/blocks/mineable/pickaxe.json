@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "coffee:coffee_machine",
-    "coffee:coffee_machine_empty_mug",
-    "coffee:grinder"
+    "coffee:grinder",
+    "coffee:coffee_machine_empty_mug"
   ]
 }

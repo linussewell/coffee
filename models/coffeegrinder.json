@@ -1,8 +1,11 @@
 {
 	"textures": {
-		"3": "Coffee+/gray_concrete",
-		"5": "Desktop/gray_stained_glass",
-		"particle": "Coffee+/gray_concrete"
+		"3": "gray_concrete",
+		"5": "gray_stained_glass",
+		"particle": "gray_concrete",
+		"minecraft_stone1": "stone",
+		"66e46f9363aab871594cbad12def547a111": "iron_block",
+		"whiteconcrete": "white_concrete"
 	},
 	"elements": [
 		{
@@ -156,14 +159,16 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"rotation": [75, 315, 0],
-			"translation": [0, 2.5, 0],
-			"scale": [0.375, 0.375, 0.375]
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
 		},
 		"firstperson_righthand": {
-			"rotation": [0, 315, 0],
-			"translation": [0, 2.5, 0],
-			"scale": [0.4, 0.4, 0.4]
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
 		},
 		"ground": {
 			"translation": [0, 3, 0],
@@ -178,7 +183,8 @@
 			"rotation": [0, 180, 0]
 		},
 		"fixed": {
-			"rotation": [0, 180, 0]
+			"rotation": [-180, -180, -180],
+			"translation": [0, 0, -3.5]
 		}
 	}
 }

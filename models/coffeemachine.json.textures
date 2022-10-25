@@ -3,8 +3,6 @@
     "default": {
       "map": {
         "whiteconcrete": "white_concrete",
-        "3": "gray_stained_glass",
-        "5": "gray_concrete",
         "66e46f9363aab871594cbad12def547a111": "iron_block",
         "minecraft_stone1": "stone"
       },

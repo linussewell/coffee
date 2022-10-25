@@ -28,22 +28,22 @@ import net.mcreator.coffeeplus.CoffeeMod;
 public class CoffeeModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, CoffeeMod.MODID);
 	public static final RegistryObject<Item> COFFEE_MACHINE = block(CoffeeModBlocks.COFFEE_MACHINE, CoffeeModTabs.TAB_COFFEE_PLUS);
+	public static final RegistryObject<Item> GRINDER = block(CoffeeModBlocks.GRINDER, CoffeeModTabs.TAB_COFFEE_PLUS);
+	public static final RegistryObject<Item> HAND_GRINDER = REGISTRY.register("hand_grinder", () -> new HandGrinderItem());
+	public static final RegistryObject<Item> CLAY_MUG = REGISTRY.register("clay_mug", () -> new ClayMugItem());
 	public static final RegistryObject<Item> MUG = REGISTRY.register("mug", () -> new MugItem());
-	public static final RegistryObject<Item> GROUND_COFFEE = REGISTRY.register("ground_coffee", () -> new GroundCoffeeItem());
+	public static final RegistryObject<Item> FULL_COFFEE_MUG = REGISTRY.register("full_coffee_mug", () -> new FullCoffeeMugItem());
+	public static final RegistryObject<Item> SUGARY_COFFEE = REGISTRY.register("sugary_coffee", () -> new SugaryCoffeeItem());
+	public static final RegistryObject<Item> MILKY_COFFEE = REGISTRY.register("milky_coffee", () -> new MilkyCoffeeItem());
+	public static final RegistryObject<Item> SUGARY_MILKY_COFFEE = REGISTRY.register("sugary_milky_coffee", () -> new SugaryMilkyCoffeeItem());
 	public static final RegistryObject<Item> RAW_COFFEE_BEAN = REGISTRY.register("raw_coffee_bean", () -> new RawCoffeeBeanItem());
 	public static final RegistryObject<Item> ROASTED_COFFEE_BEAN = REGISTRY.register("roasted_coffee_bean", () -> new RoastedCoffeeBeanItem());
+	public static final RegistryObject<Item> GROUND_COFFEE = REGISTRY.register("ground_coffee", () -> new GroundCoffeeItem());
 	public static final RegistryObject<Item> COFFEE_TREE_STAGE_0 = block(CoffeeModBlocks.COFFEE_TREE_STAGE_0, null);
 	public static final RegistryObject<Item> COFFEE_TREE_STAGE_1 = block(CoffeeModBlocks.COFFEE_TREE_STAGE_1, null);
 	public static final RegistryObject<Item> COFFEE_TREE_STAGE_2 = block(CoffeeModBlocks.COFFEE_TREE_STAGE_2, null);
 	public static final RegistryObject<Item> COFFEE_TREE_STAGE_3 = block(CoffeeModBlocks.COFFEE_TREE_STAGE_3, null);
 	public static final RegistryObject<Item> COFFEE_MACHINE_EMPTY_MUG = block(CoffeeModBlocks.COFFEE_MACHINE_EMPTY_MUG, null);
-	public static final RegistryObject<Item> FULL_COFFEE_MUG = REGISTRY.register("full_coffee_mug", () -> new FullCoffeeMugItem());
-	public static final RegistryObject<Item> SUGARY_COFFEE = REGISTRY.register("sugary_coffee", () -> new SugaryCoffeeItem());
-	public static final RegistryObject<Item> MILKY_COFFEE = REGISTRY.register("milky_coffee", () -> new MilkyCoffeeItem());
-	public static final RegistryObject<Item> SUGARY_MILKY_COFFEE = REGISTRY.register("sugary_milky_coffee", () -> new SugaryMilkyCoffeeItem());
-	public static final RegistryObject<Item> HAND_GRINDER = REGISTRY.register("hand_grinder", () -> new HandGrinderItem());
-	public static final RegistryObject<Item> GRINDER = block(CoffeeModBlocks.GRINDER, CoffeeModTabs.TAB_COFFEE_PLUS);
-	public static final RegistryObject<Item> CLAY_MUG = REGISTRY.register("clay_mug", () -> new ClayMugItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

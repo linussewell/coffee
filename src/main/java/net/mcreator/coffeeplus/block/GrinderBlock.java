@@ -5,8 +5,12 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -74,6 +78,31 @@ public class GrinderBlock extends Block
 	}
 
 	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
+		return switch (state.getValue(FACING)) {
+			default -> Shapes.or(box(5, 10, 9, 11, 14, 15), box(7, 9, 11, 9, 10, 13), box(4, 1, 1, 12, 15, 9), box(4, 0, 1, 12, 1, 15),
+					box(11, 11, 11, 12, 13, 13), box(7, 9, 9, 9, 10, 10), box(6, 6, 9, 10, 9, 10), box(9, 6, 10, 10, 7, 14), box(6, 6, 10, 7, 7, 14),
+					box(5, 16, 2, 11, 21, 8), box(6, 15, 3, 10, 16, 7));
+			case NORTH -> Shapes.or(box(5, 10, 1, 11, 14, 7), box(7, 9, 3, 9, 10, 5), box(4, 1, 7, 12, 15, 15), box(4, 0, 1, 12, 1, 15),
+					box(4, 11, 3, 5, 13, 5), box(7, 9, 6, 9, 10, 7), box(6, 6, 6, 10, 9, 7), box(6, 6, 2, 7, 7, 6), box(9, 6, 2, 10, 7, 6),
+					box(5, 16, 8, 11, 21, 14), box(6, 15, 9, 10, 16, 13));
+			case EAST -> Shapes.or(box(9, 10, 5, 15, 14, 11), box(11, 9, 7, 13, 10, 9), box(1, 1, 4, 9, 15, 12), box(1, 0, 4, 15, 1, 12),
+					box(11, 11, 4, 13, 13, 5), box(9, 9, 7, 10, 10, 9), box(9, 6, 6, 10, 9, 10), box(10, 6, 6, 14, 7, 7), box(10, 6, 9, 14, 7, 10),
+					box(2, 16, 5, 8, 21, 11), box(3, 15, 6, 7, 16, 10));
+			case WEST -> Shapes.or(box(1, 10, 5, 7, 14, 11), box(3, 9, 7, 5, 10, 9), box(7, 1, 4, 15, 15, 12), box(1, 0, 4, 15, 1, 12),
+					box(3, 11, 11, 5, 13, 12), box(6, 9, 7, 7, 10, 9), box(6, 6, 6, 7, 9, 10), box(2, 6, 9, 6, 7, 10), box(2, 6, 6, 6, 7, 7),
+					box(8, 16, 5, 14, 21, 11), box(9, 15, 6, 13, 16, 10));
+			case UP -> Shapes.or(box(5, 9, 10, 11, 15, 14), box(7, 11, 9, 9, 13, 10), box(4, 1, 1, 12, 9, 15), box(4, 1, 0, 12, 15, 1),
+					box(4, 11, 11, 5, 13, 13), box(7, 9, 9, 9, 10, 10), box(6, 9, 6, 10, 10, 9), box(6, 10, 6, 7, 14, 7), box(9, 10, 6, 10, 14, 7),
+					box(5, 2, 16, 11, 8, 21), box(6, 3, 15, 10, 7, 16));
+			case DOWN -> Shapes.or(box(5, 1, 2, 11, 7, 6), box(7, 3, 6, 9, 5, 7), box(4, 7, 1, 12, 15, 15), box(4, 1, 15, 12, 15, 16),
+					box(4, 3, 3, 5, 5, 5), box(7, 6, 6, 9, 7, 7), box(6, 6, 7, 10, 7, 10), box(6, 2, 9, 7, 6, 10), box(9, 2, 9, 10, 6, 10),
+					box(5, 8, -5, 11, 14, 0), box(6, 9, 0, 10, 13, 1));
+		};
+	}
+
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING);
 	}
@@ -89,6 +118,11 @@ public class GrinderBlock extends Block
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+	}
+
+	@Override
+	public PushReaction getPistonPushReaction(BlockState state) {
+		return PushReaction.DESTROY;
 	}
 
 	@Override
@@ -179,7 +213,7 @@ public class GrinderBlock extends Block
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(CoffeeModBlocks.GRINDER.get(), renderType -> renderType == RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(CoffeeModBlocks.GRINDER.get(), renderType -> renderType == RenderType.cutout());
 	}
 
 }
