@@ -5,11 +5,9 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 
-import net.mcreator.coffeeplus.init.CoffeeModTabs;
-
 public class HandGrinderItem extends Item {
 	public HandGrinderItem() {
-		super(new Item.Properties().tab(CoffeeModTabs.TAB_COFFEE_PLUS).durability(16).rarity(Rarity.COMMON));
+		super(new Item.Properties().durability(16).rarity(Rarity.COMMON));
 	}
 
 	@Override
@@ -18,7 +16,7 @@ public class HandGrinderItem extends Item {
 	}
 
 	@Override
-	public ItemStack getContainerItem(ItemStack itemstack) {
+	public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
 		ItemStack retval = new ItemStack(this);
 		retval.setDamageValue(itemstack.getDamageValue() + 1);
 		if (retval.getDamageValue() >= retval.getMaxDamage()) {

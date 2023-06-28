@@ -1,9 +1,9 @@
 {
-  "_fv": 33,
+  "_fv": 43,
   "_type": "potioneffect",
   "definition": {
     "effectName": "Insomnia",
-    "icon": "insomnia_bed.png",
+    "icon": "insomnia.png",
     "color": {
       "value": -15127211,
       "falpha": 0.0

@@ -15,6 +15,5 @@ import net.mcreator.coffeeplus.CoffeeMod;
 
 public class CoffeeModPotions {
 	public static final DeferredRegister<Potion> REGISTRY = DeferredRegister.create(ForgeRegistries.POTIONS, CoffeeMod.MODID);
-	public static final RegistryObject<Potion> INSOMNIA = REGISTRY.register("insomnia",
-			() -> new Potion(new MobEffectInstance(CoffeeModMobEffects.INSOMNIA.get(), 3600, 0, false, true)));
+	public static final RegistryObject<Potion> INSOMNIA = REGISTRY.register("insomnia", () -> new Potion(new MobEffectInstance(CoffeeModMobEffects.INSOMNIA.get(), 3600, 0, false, true)));
 }

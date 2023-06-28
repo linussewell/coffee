@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "coffee",
+  "version": "0.0.9",
+  "name": "Coffee+",
+  "description": "Coffee Plus adds coffee to Minecraft, the way coffee should be done. ",
+  "authors": [
+    "hyphengg"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/coffee-plus",
+    "sources": ""
+  },
+  "license": "MIT License",
+  "icon": "assets/coffee/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.mcreator.coffeeplus.CoffeeMod"
+    ],
+    "client": [
+      "net.mcreator.coffeeplus.ClientInit"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "~1.18",
+    "java": ">=17"
+  }
+}

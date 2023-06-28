@@ -1,8 +1,8 @@
 {
-  "_fv": 33,
+  "_fv": 43,
   "_type": "block",
   "definition": {
-    "texture": "66e46f9363aab871594cbad12def547a",
+    "texture": "iron_block",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -126,13 +126,7 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 2,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "isBonemealable": false,
     "hasInventory": true,
     "guiBoundTo": "CoffeeMachineGUI",
     "openGUIOnRightClick": true,
@@ -159,7 +153,16 @@
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

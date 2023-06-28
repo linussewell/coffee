@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "coffee:grinder",
+    "coffee:coffee_tree_stage_0",
+    "coffee:coffee_tree_stage_1",
+    "coffee:coffee_tree_stage_2",
+    "coffee:coffee_tree_stage_3"
+  ]
+}

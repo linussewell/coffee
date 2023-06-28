@@ -1,26 +1,30 @@
 modLoader="javafml"
-loaderVersion="[40,)"
+loaderVersion="[45,)"
 license="MIT License"
 
 [[mods]]
 modId="coffee"
-version="0.0.7"
+version="0.0.9"
 displayName="Coffee+"
-credits="Thanks to MCreator for making this mod possible."
-displayURL="https://www.curseforge.com/minecraft/mc-mods/coffee-plus"
+credits="Thanks to MCreator for making this mod possible, and to everyone who has downloaded it for their continued support."
+displayURL="https://ko-fi.com/hyphengg"
 logoFile="logo.png"
-authors="hyphen"
-description='''
-Grow, harvest, and drink your very own coffee.
-'''
+authors="hyphengg"
+description="Coffee Plus adds coffee to Minecraft, the way coffee should be done. "
 
 [[dependencies.coffee]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2]"
+    versionRange="[1.19.4]"
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.coffee]]
+    modId="forge"
+    mandatory=true
+    versionRange="[45.1.0]"
+    ordering="NONE"
+    side="BOTH"
 
 
 

@@ -1,40 +1,22 @@
 
 /*
- *    MCreator note: This file will be REGENERATED on each build.
+ *	MCreator note: This file will be REGENERATED on each build.
  */
 package net.mcreator.coffeeplus.init;
 
-import net.minecraftforge.network.IContainerFactory;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.common.extensions.IForgeMenuType;
 
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 
 import net.mcreator.coffeeplus.world.inventory.GrindingGUIMenu;
 import net.mcreator.coffeeplus.world.inventory.CoffeeMachineGUIMenu;
+import net.mcreator.coffeeplus.CoffeeMod;
 
-import java.util.List;
-import java.util.ArrayList;
-
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CoffeeModMenus {
-	private static final List<MenuType<?>> REGISTRY = new ArrayList<>();
-	public static final MenuType<CoffeeMachineGUIMenu> COFFEE_MACHINE_GUI = register("coffee_machine_gui",
-			(id, inv, extraData) -> new CoffeeMachineGUIMenu(id, inv, extraData));
-	public static final MenuType<GrindingGUIMenu> GRINDING_GUI = register("grinding_gui",
-			(id, inv, extraData) -> new GrindingGUIMenu(id, inv, extraData));
-
-	private static <T extends AbstractContainerMenu> MenuType<T> register(String registryname, IContainerFactory<T> containerFactory) {
-		MenuType<T> menuType = new MenuType<T>(containerFactory);
-		menuType.setRegistryName(registryname);
-		REGISTRY.add(menuType);
-		return menuType;
-	}
-
-	@SubscribeEvent
-	public static void registerContainers(RegistryEvent.Register<MenuType<?>> event) {
-		event.getRegistry().registerAll(REGISTRY.toArray(new MenuType[0]));
-	}
+	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, CoffeeMod.MODID);
+	public static final RegistryObject<MenuType<CoffeeMachineGUIMenu>> COFFEE_MACHINE_GUI = REGISTRY.register("coffee_machine_gui", () -> IForgeMenuType.create(CoffeeMachineGUIMenu::new));
+	public static final RegistryObject<MenuType<GrindingGUIMenu>> GRINDING_GUI = REGISTRY.register("grinding_gui", () -> IForgeMenuType.create(GrindingGUIMenu::new));
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coffee:items/empty_mug"
+    "layer0": "coffee:item/empty_mug"
   }
 }

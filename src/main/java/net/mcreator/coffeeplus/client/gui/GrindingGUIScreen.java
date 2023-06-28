@@ -1,15 +1,12 @@
-
 package net.mcreator.coffeeplus.client.gui;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
 
 import net.mcreator.coffeeplus.world.inventory.GrindingGUIMenu;
 import net.mcreator.coffeeplus.network.GrindingGUIButtonMessage;
@@ -25,6 +22,7 @@ public class GrindingGUIScreen extends AbstractContainerScreen<GrindingGUIMenu> 
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	Button button_grind;
 
 	public GrindingGUIScreen(GrindingGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -55,7 +53,7 @@ public class GrindingGUIScreen extends AbstractContainerScreen<GrindingGUIMenu> 
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
 		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/arrow.png"));
-		this.blit(ms, this.leftPos + 76, this.topPos + 25, 0, 0, 22, 15, 22, 15);
+		this.blit(ms, this.leftPos + 77, this.topPos + 26, 0, 0, 22, 15, 22, 15);
 
 		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/coffee_beans_blank.png"));
 		this.blit(ms, this.leftPos + 34, this.topPos + 26, 0, 0, 16, 16, 16, 16);
@@ -82,24 +80,24 @@ public class GrindingGUIScreen extends AbstractContainerScreen<GrindingGUIMenu> 
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Coffee Grinder", 51, 7, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.coffee.grinding_gui.label_coffee_grinder"), 51, 7, -12829636);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 64, this.topPos + 52, 45, 20, new TextComponent("Grind"), e -> {
+		button_grind = Button.builder(Component.translatable("gui.coffee.grinding_gui.button_grind"), e -> {
 			if (true) {
 				CoffeeMod.PACKET_HANDLER.sendToServer(new GrindingGUIButtonMessage(0, x, y, z));
 				GrindingGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
+		}).bounds(this.leftPos + 64, this.topPos + 52, 45, 20).build();
+		guistate.put("button:button_grind", button_grind);
+		this.addRenderableWidget(button_grind);
 	}
 }

@@ -70,7 +70,6 @@ public class GrindingGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		CoffeeMod.addNetworkMessage(GrindingGUIButtonMessage.class, GrindingGUIButtonMessage::buffer, GrindingGUIButtonMessage::new,
-				GrindingGUIButtonMessage::handler);
+		CoffeeMod.addNetworkMessage(GrindingGUIButtonMessage.class, GrindingGUIButtonMessage::buffer, GrindingGUIButtonMessage::new, GrindingGUIButtonMessage::handler);
 	}
 }

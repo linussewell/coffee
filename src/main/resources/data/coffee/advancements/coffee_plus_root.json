@@ -1,6 +1,6 @@
 {
   "display": {
-    "background": "coffee:textures/screens/5plain.png",
+    "background": "coffee:textures/screens/advancement_background_grco.png",
     "icon": {
       "item": "coffee:mug"
     },

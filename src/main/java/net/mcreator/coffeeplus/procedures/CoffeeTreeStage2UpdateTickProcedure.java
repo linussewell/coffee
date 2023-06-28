@@ -12,9 +12,9 @@ import java.util.Map;
 public class CoffeeTreeStage2UpdateTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (true) {
-			if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == CoffeeModBlocks.COFFEE_TREE_STAGE_0.get()) {
+			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == CoffeeModBlocks.COFFEE_TREE_STAGE_0.get()) {
 				{
-					BlockPos _bp = new BlockPos(x, y, z);
+					BlockPos _bp = BlockPos.containing(x, y, z);
 					BlockState _bs = CoffeeModBlocks.COFFEE_TREE_STAGE_1.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
@@ -27,9 +27,9 @@ public class CoffeeTreeStage2UpdateTickProcedure {
 					}
 					world.setBlock(_bp, _bs, 3);
 				}
-			} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == CoffeeModBlocks.COFFEE_TREE_STAGE_1.get()) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == CoffeeModBlocks.COFFEE_TREE_STAGE_1.get()) {
 				{
-					BlockPos _bp = new BlockPos(x, y, z);
+					BlockPos _bp = BlockPos.containing(x, y, z);
 					BlockState _bs = CoffeeModBlocks.COFFEE_TREE_STAGE_2.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
@@ -42,9 +42,9 @@ public class CoffeeTreeStage2UpdateTickProcedure {
 					}
 					world.setBlock(_bp, _bs, 3);
 				}
-			} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == CoffeeModBlocks.COFFEE_TREE_STAGE_2.get()) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == CoffeeModBlocks.COFFEE_TREE_STAGE_2.get()) {
 				{
-					BlockPos _bp = new BlockPos(x, y, z);
+					BlockPos _bp = BlockPos.containing(x, y, z);
 					BlockState _bs = CoffeeModBlocks.COFFEE_TREE_STAGE_3.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {

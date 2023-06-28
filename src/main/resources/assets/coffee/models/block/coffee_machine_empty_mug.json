@@ -1,10 +1,11 @@
 {
   "parent": "coffee:custom/coffeemachineemptymug",
   "textures": {
-    "all": "coffee:blocks/66e46f9363aab871594cbad12def547a",
-    "particle": "coffee:blocks/66e46f9363aab871594cbad12def547a",
-    "whiteconcrete": "coffee:blocks/whiteconcrete",
-    "66e46f9363aab871594cbad12def547a111": "coffee:blocks/66e46f9363aab871594cbad12def547a",
-    "minecraft_stone1": "coffee:blocks/minecraft_stone"
-  }
+    "all": "coffee:block/iron_block",
+    "particle": "coffee:block/iron_block",
+    "whiteconcrete": "coffee:block/whiteconcrete",
+    "66e46f9363aab871594cbad12def547a111": "coffee:block/66e46f9363aab871594cbad12def547a",
+    "minecraft_stone1": "coffee:block/minecraft_stone"
+  },
+  "render_type": "cutout"
 }

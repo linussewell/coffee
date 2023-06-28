@@ -70,7 +70,6 @@ public class CoffeeMachineGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		CoffeeMod.addNetworkMessage(CoffeeMachineGUIButtonMessage.class, CoffeeMachineGUIButtonMessage::buffer, CoffeeMachineGUIButtonMessage::new,
-				CoffeeMachineGUIButtonMessage::handler);
+		CoffeeMod.addNetworkMessage(CoffeeMachineGUIButtonMessage.class, CoffeeMachineGUIButtonMessage::buffer, CoffeeMachineGUIButtonMessage::new, CoffeeMachineGUIButtonMessage::handler);
 	}
 }

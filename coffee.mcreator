@@ -7,6 +7,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_machine",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/item/coffee_machine.json",
+          "src/main/resources/assets/coffee/blockstates/coffee_machine.json",
+          "src/main/resources/assets/coffee/models/block/coffee_machine.json",
+          "src/main/java/net/mcreator/coffeeplus/block/CoffeeMachineBlock.java",
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeMachineBlockEntity.java"
+        ]
+      },
       "path": "~/Coffee Machine"
     },
     {
@@ -16,6 +25,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_machine_crafting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/coffee_machine_crafting.json"
+        ]
+      },
       "path": "~/Coffee Machine"
     },
     {
@@ -25,6 +39,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mug",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/item/MugItem.java",
+          "src/main/resources/assets/coffee/models/item/mug.json"
+        ]
+      },
       "path": "~/Coffee Mug"
     },
     {
@@ -34,6 +54,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "ground_coffee",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/item/ground_coffee.json",
+          "src/main/java/net/mcreator/coffeeplus/item/GroundCoffeeItem.java"
+        ]
+      },
       "path": "~/Coffee Beans"
     },
     {
@@ -72,6 +98,13 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_machine_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/network/CoffeeMachineGUIButtonMessage.java",
+          "src/main/java/net/mcreator/coffeeplus/world/inventory/CoffeeMachineGUIMenu.java",
+          "src/main/java/net/mcreator/coffeeplus/client/gui/CoffeeMachineGUIScreen.java"
+        ]
+      },
       "path": "~/Coffee Machine"
     },
     {
@@ -82,10 +115,17 @@
       "locked_code": false,
       "registry_name": "coffee_consumed",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/CoffeeConsumedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -98,6 +138,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_coffee_bean",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/item/raw_coffee_bean.json",
+          "src/main/java/net/mcreator/coffeeplus/item/RawCoffeeBeanItem.java"
+        ]
+      },
       "path": "~/Coffee Beans"
     },
     {
@@ -107,6 +153,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "roasted_coffee_bean",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/item/roasted_coffee_bean.json",
+          "src/main/java/net/mcreator/coffeeplus/item/RoastedCoffeeBeanItem.java"
+        ]
+      },
       "path": "~/Coffee Beans"
     },
     {
@@ -116,6 +168,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_roasting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/coffee_roasting.json"
+        ]
+      },
       "path": "~/Coffee Beans"
     },
     {
@@ -125,6 +182,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_smoking",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/coffee_smoking.json"
+        ]
+      },
       "path": "~/Coffee Beans"
     },
     {
@@ -134,6 +196,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_0",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage0Block.java",
+          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_0.json",
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage0BlockEntity.java",
+          "src/main/resources/assets/coffee/models/item/coffee_tree_stage_0.json",
+          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_0.json"
+        ]
+      },
       "path": "~/Coffee Tree"
     },
     {
@@ -143,6 +214,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage1BlockEntity.java",
+          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_1.json",
+          "src/main/resources/assets/coffee/models/item/coffee_tree_stage_1.json",
+          "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage1Block.java",
+          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_1.json"
+        ]
+      },
       "path": "~/Coffee Tree"
     },
     {
@@ -152,6 +232,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_2.json",
+          "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage2Block.java",
+          "src/main/resources/assets/coffee/models/item/coffee_tree_stage_2.json",
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage2BlockEntity.java",
+          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_2.json"
+        ]
+      },
       "path": "~/Coffee Tree"
     },
     {
@@ -161,6 +250,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_stage_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage3BlockEntity.java",
+          "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage3Block.java",
+          "src/main/resources/assets/coffee/models/item/coffee_tree_stage_3.json",
+          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_3.json",
+          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_3.json"
+        ]
+      },
       "path": "~/Coffee Tree"
     },
     {
@@ -171,6 +269,9 @@
       "locked_code": false,
       "registry_name": "coffee_tree_stage_0_entity_collides_in_the_block",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/CoffeeTreeStage0EntityCollidesInTheBlockProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -188,6 +289,9 @@
       "locked_code": false,
       "registry_name": "planting_coffee",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/PlantingCoffeeProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -220,6 +324,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "brew_coffee_advancement",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/advancements/brew_coffee_advancement.json"
+        ]
+      },
       "path": "~/Other"
     },
     {
@@ -230,6 +339,9 @@
       "locked_code": false,
       "registry_name": "coffee_tree_stage_2_on_block_right_clicked",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/CoffeeTreeStage2OnBlockRightClickedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -263,6 +375,9 @@
       "locked_code": false,
       "registry_name": "coffee_tree_stage_2_update_tick",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/CoffeeTreeStage2UpdateTickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -292,40 +407,10 @@
       "locked_code": false,
       "registry_name": "coffee_tree_stage_0_block_destroyed_by_player",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/CoffeeTreeStage0BlockDestroyedByPlayerProcedure.java"
+        ],
         "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Coffee Tree"
-    },
-    {
-      "name": "CoffeeTreeStage0OnBlockRightClickedWithBonemeal",
-      "type": "procedure",
-      "sortid": 29,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "coffee_tree_stage_0_on_block_right_clicked_with_bonemeal",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
           {
             "name": "x",
             "type": "number"
@@ -353,6 +438,14 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_tree_spawn",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/forge/biome_modifier/coffee_tree_spawn_biome_modifier.json",
+          "src/main/resources/data/coffee/worldgen/placed_feature/coffee_tree_spawn.json",
+          "src/main/java/net/mcreator/coffeeplus/world/features/CoffeeTreeSpawnFeature.java",
+          "src/main/resources/data/coffee/worldgen/configured_feature/coffee_tree_spawn.json"
+        ]
+      },
       "path": "~/Coffee Tree"
     },
     {
@@ -363,10 +456,17 @@
       "locked_code": false,
       "registry_name": "sugary_coffee_consumed",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/SugaryCoffeeConsumedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -380,10 +480,17 @@
       "locked_code": false,
       "registry_name": "milky_coffee_consumed",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/MilkyCoffeeConsumedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -397,10 +504,17 @@
       "locked_code": false,
       "registry_name": "sugary_milky_coffee_consumed",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/SugaryMilkyCoffeeConsumedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -413,6 +527,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_coffee_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/sugary_coffee_recipe.json"
+        ]
+      },
       "path": "~/Sugary Coffee"
     },
     {
@@ -422,6 +541,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "milky_coffee_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/milky_coffee_recipe.json"
+        ]
+      },
       "path": "~/Milky Coffee"
     },
     {
@@ -431,6 +555,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_milky_coffee_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/sugary_milky_coffee_recipe.json"
+        ]
+      },
       "path": "~/Sugary Milky Coffee"
     },
     {
@@ -440,6 +569,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_machine_empty_mug",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeMachineEmptyMugBlockEntity.java",
+          "src/main/resources/assets/coffee/models/item/coffee_machine_empty_mug.json",
+          "src/main/java/net/mcreator/coffeeplus/block/CoffeeMachineEmptyMugBlock.java",
+          "src/main/resources/assets/coffee/blockstates/coffee_machine_empty_mug.json",
+          "src/main/resources/assets/coffee/models/block/coffee_machine_empty_mug.json"
+        ]
+      },
       "path": "~/Coffee Machine"
     },
     {
@@ -449,6 +587,9 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "insomnia",
+      "metadata": {
+        "files": []
+      },
       "path": "~/Insomnia"
     },
     {
@@ -459,6 +600,9 @@
       "locked_code": false,
       "registry_name": "insomnia_effect",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/InsomniaEffectProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -491,6 +635,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_grinder_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/coffee_grinder_recipe.json"
+        ]
+      },
       "path": "~/Coffee Grinder"
     },
     {
@@ -501,6 +650,9 @@
       "locked_code": false,
       "registry_name": "grinding_procedure",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/GrindingProcedureProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -529,6 +681,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "insomnia",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/potion/InsomniaMobEffect.java"
+        ]
+      },
       "path": "~/Insomnia"
     },
     {
@@ -538,6 +695,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "full_coffee_mug",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/item/FullCoffeeMugItem.java",
+          "src/main/resources/assets/coffee/models/item/full_coffee_mug.json"
+        ]
+      },
       "path": "~/Coffee Mug"
     },
     {
@@ -547,6 +710,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_coffee",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/item/SugaryCoffeeItem.java",
+          "src/main/resources/assets/coffee/models/item/sugary_coffee.json"
+        ]
+      },
       "path": "~/Sugary Coffee"
     },
     {
@@ -556,6 +725,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "milky_coffee",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/item/milky_coffee.json",
+          "src/main/java/net/mcreator/coffeeplus/item/MilkyCoffeeItem.java"
+        ]
+      },
       "path": "~/Milky Coffee"
     },
     {
@@ -565,6 +740,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "sugary_milky_coffee",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/item/sugary_milky_coffee.json",
+          "src/main/java/net/mcreator/coffeeplus/item/SugaryMilkyCoffeeItem.java"
+        ]
+      },
       "path": "~/Sugary Milky Coffee"
     },
     {
@@ -574,6 +755,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "hand_grinder",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/item/hand_grinder.json",
+          "src/main/java/net/mcreator/coffeeplus/item/HandGrinderItem.java"
+        ]
+      },
       "path": "~/HandGrinder"
     },
     {
@@ -583,6 +770,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "hand_ground_coffee",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/hand_ground_coffee.json"
+        ]
+      },
       "path": "~/HandGrinder"
     },
     {
@@ -592,6 +784,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "hand_grinder_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/hand_grinder_recipe.json"
+        ]
+      },
       "path": "~/HandGrinder"
     },
     {
@@ -601,6 +798,15 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "grinder",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/block/GrinderBlock.java",
+          "src/main/resources/assets/coffee/blockstates/grinder.json",
+          "src/main/resources/assets/coffee/models/block/grinder.json",
+          "src/main/resources/assets/coffee/models/item/grinder.json",
+          "src/main/java/net/mcreator/coffeeplus/block/entity/GrinderBlockEntity.java"
+        ]
+      },
       "path": "~/Coffee Grinder"
     },
     {
@@ -610,6 +816,13 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "grinding_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/world/inventory/GrindingGUIMenu.java",
+          "src/main/java/net/mcreator/coffeeplus/network/GrindingGUIButtonMessage.java",
+          "src/main/java/net/mcreator/coffeeplus/client/gui/GrindingGUIScreen.java"
+        ]
+      },
       "path": "~/Coffee Grinder"
     },
     {
@@ -619,6 +832,9 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_plus",
+      "metadata": {
+        "files": []
+      },
       "path": "~/Other"
     },
     {
@@ -628,6 +844,9 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_coffee_trade",
+      "metadata": {
+        "files": []
+      },
       "path": "~/Other"
     },
     {
@@ -637,6 +856,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_plus_root",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/advancements/coffee_plus_root.json"
+        ]
+      },
       "path": "~/Other"
     },
     {
@@ -646,6 +870,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "clay_mug",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/coffee/models/item/clay_mug.json",
+          "src/main/java/net/mcreator/coffeeplus/item/ClayMugItem.java"
+        ]
+      },
       "path": "~/Clay Mug"
     },
     {
@@ -655,6 +885,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "clay_mug_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/clay_mug_recipe.json"
+        ]
+      },
       "path": "~/Clay Mug"
     },
     {
@@ -664,6 +899,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "make_mug_advancement",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/advancements/make_mug_advancement.json"
+        ]
+      },
       "path": "~/Other"
     },
     {
@@ -673,6 +913,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "clay_mug_smelting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/clay_mug_smelting.json"
+        ]
+      },
       "path": "~/Clay Mug"
     },
     {
@@ -682,6 +927,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_grinder_recipe_tinted",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/coffee_grinder_recipe_tinted.json"
+        ]
+      },
       "path": "~/Coffee Grinder"
     },
     {
@@ -691,6 +941,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_grinder_recipe_base",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/coffee/recipes/coffee_grinder_recipe_base.json"
+        ]
+      },
       "path": "~/Coffee Grinder"
     },
     {
@@ -701,6 +956,9 @@
       "locked_code": false,
       "registry_name": "swap_item_model",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/SwapItemModelProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -730,6 +988,9 @@
       "locked_code": false,
       "registry_name": "swap_model_back",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/SwapModelBackProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -750,59 +1011,80 @@
         ]
       },
       "path": "~/Coffee Machine"
+    },
+    {
+      "name": "AntiAntiGravity",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "anti_anti_gravity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/AntiAntiGravityProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Coffee Tree"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "gui.coffee.grinding_gui.label_coffee_grinder": "Coffee Grinder",
       "item.minecraft.splash_potion.effect.insomnia": "Splash potion of Insomnia",
-      "item.minecraft.potion.effect.insomnia": "Potion of Insomnia",
       "block.coffee.coffee_machine": "Coffee Machine",
+      "item.coffee.ground_coffee": "Ground Coffee",
+      "item.coffeeplus.full_coffee_mug": "Full Coffee Mug",
+      "item.coffee.hand_grinder": "Hand Grinder",
+      "block.coffeeplus.coffee_tree_stage_3": "Coffee Tree",
+      "item.coffeeplus.hand_grinder": "Hand Grinder",
+      "block.coffeeplus.coffee_tree_stage_2": "Coffee Tree",
+      "advancements.brew_coffee_advancement.descr": "Drink coffee for the first time",
+      "block.coffeeplus.coffee_tree_stage_1": "Coffee Tree",
+      "block.coffeeplus.coffee_tree_stage_0": "Coffee Tree",
+      "item_group.coffee.coffee_plus": "Coffee+",
+      "itemGroup.tabcoffee_plus": "Coffee+",
+      "block.coffee.grinder": "Coffee Grinder",
+      "gui.coffee.coffee_machine_gui.button_brew": "Brew",
+      "item.coffee.full_coffee_mug": "Full Coffee Mug",
+      "item.coffee.mug": "Empty Coffee Mug",
+      "advancements.brew_coffee_advancement.title": "Caffeine rush",
+      "advancements.coffee_plus_root.descr": "Adding the best hot drink to Minecraft with ease.",
+      "item.minecraft.tipped_arrow.effect.insomnia": "Arrow of Insomnia",
+      "advancements.make_mug_advancement.title": "Fresh out of the kiln",
+      "itemGroup.coffee.coffee_plus": "Coffee+",
+      "item.coffee.milky_coffee": "Milky Coffee",
+      "gui.coffee.coffee_machine_gui.label_coffee_machine": "Coffee Machine",
+      "item.coffee.sugary_milky_coffee": "Sugary Milky Coffee",
+      "item.coffeeplus.roasted_coffee_bean": "Roasted Coffee Beans",
+      "item.coffee.raw_coffee_bean": "Raw Coffee Beans",
+      "gui.coffee.grinding_gui.button_grind": "Grind",
+      "item.minecraft.potion.effect.insomnia": "Potion of Insomnia",
       "item.coffeeplus.milky_coffee": "Milky Coffee",
       "item.coffeeplus.mug": "Empty Coffee Mug",
       "item.coffeeplus.raw_coffee_bean": "Raw Coffee Beans",
-      "item.coffee.ground_coffee": "Ground Coffee",
       "item.coffeeplus.ground_coffee": "Ground Coffee",
-      "item.coffeeplus.full_coffee_mug": "Full Coffee Mug",
       "advancements.coffee_plus_root.title": "Coffee+",
-      "item.coffee.hand_grinder": "Hand Grinder",
       "effect.coffeeplus.insomnia": "Insomnia",
-      "block.coffeeplus.coffee_tree_stage_3": "Coffee Tree",
-      "block.coffeeplus.coffee_tree_stage_2": "Coffee Tree",
-      "advancements.brew_coffee_advancement.descr": "Drink coffee for the first time",
       "item.minecraft.lingering_potion.effect.insomnia": "Lingering potion of Insomnia",
-      "item.coffeeplus.hand_grinder": "Hand Grinder",
-      "block.coffeeplus.coffee_tree_stage_1": "Coffee Tree",
       "block.coffee.coffee_tree_stage_2": "Coffee Tree",
-      "block.coffeeplus.coffee_tree_stage_0": "Coffee Tree",
       "block.coffee.coffee_tree_stage_3": "Coffee Tree",
       "block.coffee.coffee_machine_empty_mug": "Coffee Machine Empty Mug",
       "block.coffee.coffee_tree_stage_0": "Coffee Tree",
-      "itemGroup.tabcoffee_plus": "Coffee+",
       "block.coffee.coffee_tree_stage_1": "Coffee Tree",
       "item.coffee.sugary_coffee": "Sugary Coffee",
       "item.coffee.clay_mug": "Clay Coffee Mug",
-      "block.coffee.grinder": "Coffee Grinder",
       "block.coffeeplus.coffee_machine_empty_mug": "Coffee Machine Empty Mug",
-      "item.coffee.full_coffee_mug": "Full Coffee Mug",
       "block.coffeeplus.coffee_machine": "Coffee Machine",
       "item.coffeeplus.sugary_coffee": "Sugary Coffee",
       "effect.insomnia": "Insomnia",
       "item.coffee.roasted_coffee_bean": "Roasted Coffee Beans",
       "effect.coffee.insomnia": "Insomnia",
-      "item.coffee.mug": "Empty Coffee Mug",
       "item.coffeeplus.sugary_milky_coffee": "Sugary Milky Coffee",
       "advancements.make_mug_advancement.descr": "Obtain a coffee mug",
-      "block.coffeeplus.grinder": "Coffee Grinder",
-      "advancements.brew_coffee_advancement.title": "Caffeine rush",
-      "advancements.coffee_plus_root.descr": "Adding the best hot drink to Minecraft with ease.",
-      "item.minecraft.tipped_arrow.effect.insomnia": "Arrow of Insomnia",
-      "advancements.make_mug_advancement.title": "Fresh out of the kiln",
-      "item.coffee.milky_coffee": "Milky Coffee",
-      "item.coffee.sugary_milky_coffee": "Sugary Milky Coffee",
-      "item.coffeeplus.roasted_coffee_bean": "Roasted Coffee Beans",
-      "item.coffee.raw_coffee_bean": "Raw Coffee Beans"
+      "block.coffeeplus.grinder": "Coffee Grinder"
     }
   },
   "foldersRoot": {
@@ -866,22 +1148,22 @@
   "workspaceSettings": {
     "modid": "coffee",
     "modName": "Coffee+",
-    "version": "0.0.7",
-    "description": "Grow, harvest, and drink your very own coffee.",
-    "author": "hyphen",
-    "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/coffee-plus",
+    "version": "0.0.9",
+    "description": "Coffee Plus adds coffee to Minecraft, the way coffee should be done. ",
+    "author": "hyphengg",
+    "websiteURL": "https://ko-fi.com/hyphengg",
     "license": "MIT License",
-    "disableForgeVersionCheck": true,
+    "disableForgeVersionCheck": false,
     "serverSideOnly": false,
     "modPicture": "coffeeplus5",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.18.2",
-    "credits": "Thanks to MCreator for making this mod possible.",
+    "currentGenerator": "forge-1.19.4",
+    "credits": "Thanks to MCreator for making this mod possible, and to everyone who has downloaded it for their continued support.",
     "modElementsPackage": "net.mcreator.coffeeplus",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200234517
+  "mcreatorVersion": 202300224119
 }

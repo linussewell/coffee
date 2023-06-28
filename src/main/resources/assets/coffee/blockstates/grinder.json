@@ -14,14 +14,6 @@
     "facing=west": {
       "model": "coffee:block/grinder",
       "y": 270
-    },
-    "facing=up": {
-      "model": "coffee:block/grinder",
-      "x": 270
-    },
-    "facing=down": {
-      "model": "coffee:block/grinder",
-      "x": 90
     }
   }
 }

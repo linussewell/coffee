@@ -1,6 +1,6 @@
 
 /*
- *    MCreator note: This file will be REGENERATED on each build.
+ *	MCreator note: This file will be REGENERATED on each build.
  */
 package net.mcreator.coffeeplus.init;
 
@@ -19,8 +19,8 @@ public class CoffeeModScreens {
 	@SubscribeEvent
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			MenuScreens.register(CoffeeModMenus.COFFEE_MACHINE_GUI, CoffeeMachineGUIScreen::new);
-			MenuScreens.register(CoffeeModMenus.GRINDING_GUI, GrindingGUIScreen::new);
+			MenuScreens.register(CoffeeModMenus.COFFEE_MACHINE_GUI.get(), CoffeeMachineGUIScreen::new);
+			MenuScreens.register(CoffeeModMenus.GRINDING_GUI.get(), GrindingGUIScreen::new);
 		});
 	}
 }

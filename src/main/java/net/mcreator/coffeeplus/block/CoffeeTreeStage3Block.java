@@ -1,9 +1,9 @@
 
 package net.mcreator.coffeeplus.block;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.MaterialColor;
@@ -23,29 +23,22 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.mcreator.coffeeplus.procedures.CoffeeTreeStage2UpdateTickProcedure;
 import net.mcreator.coffeeplus.procedures.CoffeeTreeStage2OnBlockRightClickedProcedure;
 import net.mcreator.coffeeplus.procedures.CoffeeTreeStage0EntityCollidesInTheBlockProcedure;
 import net.mcreator.coffeeplus.procedures.CoffeeTreeStage0BlockDestroyedByPlayerProcedure;
+import net.mcreator.coffeeplus.procedures.AntiAntiGravityProcedure;
 import net.mcreator.coffeeplus.init.CoffeeModItems;
-import net.mcreator.coffeeplus.init.CoffeeModBlocks;
 import net.mcreator.coffeeplus.block.entity.CoffeeTreeStage3BlockEntity;
 
-import java.util.Random;
-
-public class CoffeeTreeStage3Block extends Block
-		implements
-
-			EntityBlock {
+public class CoffeeTreeStage3Block extends Block implements EntityBlock {
 	public CoffeeTreeStage3Block() {
-		super(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT).sound(SoundType.SWEET_BERRY_BUSH).instabreak().noCollission()
-				.noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false).noDrops());
+		super(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT).sound(SoundType.SWEET_BERRY_BUSH).instabreak().noCollission().noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false).noLootTable());
 	}
 
 	@Override
@@ -59,6 +52,11 @@ public class CoffeeTreeStage3Block extends Block
 	}
 
 	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
+
+	@Override
 	public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
 		return 60;
 	}
@@ -69,12 +67,17 @@ public class CoffeeTreeStage3Block extends Block
 	}
 
 	@Override
-	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
+	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
+		AntiAntiGravityProcedure.execute();
+	}
+
+	@Override
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-
 		CoffeeTreeStage2UpdateTickProcedure.execute(world, x, y, z);
 	}
 
@@ -101,7 +104,6 @@ public class CoffeeTreeStage3Block extends Block
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-
 		CoffeeTreeStage2OnBlockRightClickedProcedure.execute(world, x, y, z, entity);
 		return InteractionResult.SUCCESS;
 	}
@@ -123,10 +125,4 @@ public class CoffeeTreeStage3Block extends Block
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		return blockEntity == null ? false : blockEntity.triggerEvent(eventID, eventParam);
 	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(CoffeeModBlocks.COFFEE_TREE_STAGE_3.get(), renderType -> renderType == RenderType.cutout());
-	}
-
 }

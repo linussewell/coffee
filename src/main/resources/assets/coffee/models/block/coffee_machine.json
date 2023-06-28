@@ -1,10 +1,11 @@
 {
   "parent": "coffee:custom/coffeemachine",
   "textures": {
-    "all": "coffee:blocks/white_concrete",
-    "particle": "coffee:blocks/white_concrete",
-    "whiteconcrete": "coffee:blocks/white_concrete",
-    "66e46f9363aab871594cbad12def547a111": "coffee:blocks/iron_block",
-    "minecraft_stone1": "coffee:blocks/stone"
-  }
+    "all": "coffee:block/white_concrete",
+    "particle": "coffee:block/white_concrete",
+    "whiteconcrete": "coffee:block/white_concrete",
+    "66e46f9363aab871594cbad12def547a111": "coffee:block/iron_block",
+    "minecraft_stone1": "coffee:block/stone"
+  },
+  "render_type": "cutout"
 }

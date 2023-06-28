@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 43,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Coffee Grinder",
+          "name": "label_coffee_grinder",
+          "text": {
+            "fixedValue": "Coffee Grinder"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Coffee Grinder",
           "x": 177,
           "y": 44
         }
@@ -28,9 +30,8 @@
         "data": {
           "image": "arrow.png",
           "use1Xscale": true,
-          "name": "arrow.png",
-          "x": 202,
-          "y": 62
+          "x": 203,
+          "y": 63
         }
       },
       {
@@ -39,10 +40,14 @@
           "inputLimit": {
             "value": "CUSTOM:RoastedCoffeeBean"
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "id": 0,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
           "x": 159,
           "y": 62
         }
@@ -50,13 +55,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_grind",
           "text": "Grind",
           "onClick": {
             "name": "GrindingProcedure"
           },
           "width": 45,
           "height": 20,
-          "name": "Grind",
           "x": 190,
           "y": 89
         }
@@ -65,9 +70,10 @@
         "type": "outputslot",
         "data": {
           "id": 1,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #1",
           "x": 249,
           "y": 62
         }
@@ -77,7 +83,6 @@
         "data": {
           "image": "coffee_beans_blank.png",
           "use1Xscale": false,
-          "name": "coffee_beans_blank.png",
           "x": 160,
           "y": 63
         }
@@ -87,7 +92,6 @@
         "data": {
           "image": "ground_coffee_blank.png",
           "use1Xscale": false,
-          "name": "ground_coffee_blank.png",
           "x": 250,
           "y": 63
         }

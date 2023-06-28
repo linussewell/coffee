@@ -12,15 +12,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 
 import net.mcreator.coffeeplus.procedures.SugaryMilkyCoffeeConsumedProcedure;
-import net.mcreator.coffeeplus.init.CoffeeModTabs;
 import net.mcreator.coffeeplus.init.CoffeeModItems;
 
 public class SugaryMilkyCoffeeItem extends Item {
 	public SugaryMilkyCoffeeItem() {
-		super(new Item.Properties().tab(CoffeeModTabs.TAB_COFFEE_PLUS).stacksTo(1).rarity(Rarity.COMMON)
-				.food((new FoodProperties.Builder()).nutrition(3).saturationMod(1.5f).alwaysEat()
-
-						.build()));
+		super(new Item.Properties().stacksTo(1).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(3).saturationMod(1.5f).alwaysEat().build()));
 	}
 
 	@Override
@@ -40,8 +36,7 @@ public class SugaryMilkyCoffeeItem extends Item {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-
-		SugaryMilkyCoffeeConsumedProcedure.execute(entity);
+		SugaryMilkyCoffeeConsumedProcedure.execute(world, entity);
 		if (itemstack.isEmpty()) {
 			return retval;
 		} else {

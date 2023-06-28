@@ -7,10 +7,6 @@ package net.mcreator.coffeeplus.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 
@@ -31,20 +27,5 @@ public class CoffeeModBlocks {
 	public static final RegistryObject<Block> COFFEE_TREE_STAGE_1 = REGISTRY.register("coffee_tree_stage_1", () -> new CoffeeTreeStage1Block());
 	public static final RegistryObject<Block> COFFEE_TREE_STAGE_2 = REGISTRY.register("coffee_tree_stage_2", () -> new CoffeeTreeStage2Block());
 	public static final RegistryObject<Block> COFFEE_TREE_STAGE_3 = REGISTRY.register("coffee_tree_stage_3", () -> new CoffeeTreeStage3Block());
-	public static final RegistryObject<Block> COFFEE_MACHINE_EMPTY_MUG = REGISTRY.register("coffee_machine_empty_mug",
-			() -> new CoffeeMachineEmptyMugBlock());
-
-	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-	public static class ClientSideHandler {
-		@SubscribeEvent
-		public static void clientSetup(FMLClientSetupEvent event) {
-			CoffeeMachineBlock.registerRenderLayer();
-			GrinderBlock.registerRenderLayer();
-			CoffeeTreeStage0Block.registerRenderLayer();
-			CoffeeTreeStage1Block.registerRenderLayer();
-			CoffeeTreeStage2Block.registerRenderLayer();
-			CoffeeTreeStage3Block.registerRenderLayer();
-			CoffeeMachineEmptyMugBlock.registerRenderLayer();
-		}
-	}
+	public static final RegistryObject<Block> COFFEE_MACHINE_EMPTY_MUG = REGISTRY.register("coffee_machine_empty_mug", () -> new CoffeeMachineEmptyMugBlock());
 }

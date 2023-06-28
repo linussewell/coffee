@@ -1,15 +1,12 @@
-
 package net.mcreator.coffeeplus.client.gui;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
 
 import net.mcreator.coffeeplus.world.inventory.CoffeeMachineGUIMenu;
 import net.mcreator.coffeeplus.network.CoffeeMachineGUIButtonMessage;
@@ -25,6 +22,7 @@ public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachin
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	Button button_brew;
 
 	public CoffeeMachineGUIScreen(CoffeeMachineGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -60,10 +58,10 @@ public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachin
 		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/ground_coffee_blank.png"));
 		this.blit(ms, this.leftPos + 34, this.topPos + 26, 0, 0, 16, 16, 16, 16);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/empty_mug_blank2.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/empty_mug_blank.png"));
 		this.blit(ms, this.leftPos + 34, this.topPos + 53, 0, 0, 16, 16, 16, 16);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/full_mug_blank2.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/full_mug_blank.png"));
 		this.blit(ms, this.leftPos + 124, this.topPos + 26, 0, 0, 16, 16, 16, 16);
 
 		RenderSystem.disableBlend();
@@ -85,24 +83,24 @@ public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachin
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Coffee Machine", 50, 7, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.coffee.coffee_machine_gui.label_coffee_machine"), 50, 7, -12829636);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 65, this.topPos + 52, 45, 20, new TextComponent("Brew"), e -> {
+		button_brew = Button.builder(Component.translatable("gui.coffee.coffee_machine_gui.button_brew"), e -> {
 			if (true) {
 				CoffeeMod.PACKET_HANDLER.sendToServer(new CoffeeMachineGUIButtonMessage(0, x, y, z));
 				CoffeeMachineGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
+		}).bounds(this.leftPos + 65, this.topPos + 52, 45, 20).build();
+		guistate.put("button:button_brew", button_brew);
+		this.addRenderableWidget(button_brew);
 	}
 }
