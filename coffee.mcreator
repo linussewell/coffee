@@ -9,11 +9,11 @@
       "registry_name": "coffee_machine",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeMachineBlockEntity.java",
           "src/main/resources/assets/coffee/models/item/coffee_machine.json",
-          "src/main/resources/assets/coffee/blockstates/coffee_machine.json",
-          "src/main/resources/assets/coffee/models/block/coffee_machine.json",
           "src/main/java/net/mcreator/coffeeplus/block/CoffeeMachineBlock.java",
-          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeMachineBlockEntity.java"
+          "src/main/resources/assets/coffee/blockstates/coffee_machine.json",
+          "src/main/resources/assets/coffee/models/block/coffee_machine.json"
         ]
       },
       "path": "~/Coffee Machine"
@@ -56,8 +56,8 @@
       "registry_name": "ground_coffee",
       "metadata": {
         "files": [
-          "src/main/resources/assets/coffee/models/item/ground_coffee.json",
-          "src/main/java/net/mcreator/coffeeplus/item/GroundCoffeeItem.java"
+          "src/main/java/net/mcreator/coffeeplus/item/GroundCoffeeItem.java",
+          "src/main/resources/assets/coffee/models/item/ground_coffee.json"
         ]
       },
       "path": "~/Coffee Beans"
@@ -70,6 +70,9 @@
       "locked_code": false,
       "registry_name": "brewing_procedure",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/coffeeplus/procedures/BrewingProcedureProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -100,9 +103,9 @@
       "registry_name": "coffee_machine_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/coffeeplus/network/CoffeeMachineGUIButtonMessage.java",
           "src/main/java/net/mcreator/coffeeplus/world/inventory/CoffeeMachineGUIMenu.java",
-          "src/main/java/net/mcreator/coffeeplus/client/gui/CoffeeMachineGUIScreen.java"
+          "src/main/java/net/mcreator/coffeeplus/client/gui/CoffeeMachineGUIScreen.java",
+          "src/main/java/net/mcreator/coffeeplus/network/CoffeeMachineGUIButtonMessage.java"
         ]
       },
       "path": "~/Coffee Machine"
@@ -140,8 +143,8 @@
       "registry_name": "raw_coffee_bean",
       "metadata": {
         "files": [
-          "src/main/resources/assets/coffee/models/item/raw_coffee_bean.json",
-          "src/main/java/net/mcreator/coffeeplus/item/RawCoffeeBeanItem.java"
+          "src/main/java/net/mcreator/coffeeplus/item/RawCoffeeBeanItem.java",
+          "src/main/resources/assets/coffee/models/item/raw_coffee_bean.json"
         ]
       },
       "path": "~/Coffee Beans"
@@ -155,8 +158,8 @@
       "registry_name": "roasted_coffee_bean",
       "metadata": {
         "files": [
-          "src/main/resources/assets/coffee/models/item/roasted_coffee_bean.json",
-          "src/main/java/net/mcreator/coffeeplus/item/RoastedCoffeeBeanItem.java"
+          "src/main/java/net/mcreator/coffeeplus/item/RoastedCoffeeBeanItem.java",
+          "src/main/resources/assets/coffee/models/item/roasted_coffee_bean.json"
         ]
       },
       "path": "~/Coffee Beans"
@@ -198,11 +201,11 @@
       "registry_name": "coffee_tree_stage_0",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage0Block.java",
-          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_0.json",
           "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage0BlockEntity.java",
           "src/main/resources/assets/coffee/models/item/coffee_tree_stage_0.json",
-          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_0.json"
+          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_0.json",
+          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_0.json",
+          "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage0Block.java"
         ]
       },
       "path": "~/Coffee Tree"
@@ -216,11 +219,11 @@
       "registry_name": "coffee_tree_stage_1",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage1BlockEntity.java",
+          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_1.json",
           "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_1.json",
-          "src/main/resources/assets/coffee/models/item/coffee_tree_stage_1.json",
           "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage1Block.java",
-          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_1.json"
+          "src/main/resources/assets/coffee/models/item/coffee_tree_stage_1.json",
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage1BlockEntity.java"
         ]
       },
       "path": "~/Coffee Tree"
@@ -234,11 +237,11 @@
       "registry_name": "coffee_tree_stage_2",
       "metadata": {
         "files": [
-          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_2.json",
-          "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage2Block.java",
-          "src/main/resources/assets/coffee/models/item/coffee_tree_stage_2.json",
+          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_2.json",
           "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage2BlockEntity.java",
-          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_2.json"
+          "src/main/resources/assets/coffee/models/item/coffee_tree_stage_2.json",
+          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_2.json",
+          "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage2Block.java"
         ]
       },
       "path": "~/Coffee Tree"
@@ -252,11 +255,11 @@
       "registry_name": "coffee_tree_stage_3",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage3BlockEntity.java",
           "src/main/java/net/mcreator/coffeeplus/block/CoffeeTreeStage3Block.java",
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeTreeStage3BlockEntity.java",
+          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_3.json",
           "src/main/resources/assets/coffee/models/item/coffee_tree_stage_3.json",
-          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_3.json",
-          "src/main/resources/assets/coffee/blockstates/coffee_tree_stage_3.json"
+          "src/main/resources/assets/coffee/models/block/coffee_tree_stage_3.json"
         ]
       },
       "path": "~/Coffee Tree"
@@ -440,10 +443,10 @@
       "registry_name": "coffee_tree_spawn",
       "metadata": {
         "files": [
+          "src/main/resources/data/coffee/worldgen/configured_feature/coffee_tree_spawn.json",
           "src/main/resources/data/coffee/forge/biome_modifier/coffee_tree_spawn_biome_modifier.json",
           "src/main/resources/data/coffee/worldgen/placed_feature/coffee_tree_spawn.json",
-          "src/main/java/net/mcreator/coffeeplus/world/features/CoffeeTreeSpawnFeature.java",
-          "src/main/resources/data/coffee/worldgen/configured_feature/coffee_tree_spawn.json"
+          "src/main/java/net/mcreator/coffeeplus/world/features/CoffeeTreeSpawnFeature.java"
         ]
       },
       "path": "~/Coffee Tree"
@@ -571,11 +574,11 @@
       "registry_name": "coffee_machine_empty_mug",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeMachineEmptyMugBlockEntity.java",
           "src/main/resources/assets/coffee/models/item/coffee_machine_empty_mug.json",
+          "src/main/java/net/mcreator/coffeeplus/block/entity/CoffeeMachineEmptyMugBlockEntity.java",
+          "src/main/resources/assets/coffee/models/block/coffee_machine_empty_mug.json",
           "src/main/java/net/mcreator/coffeeplus/block/CoffeeMachineEmptyMugBlock.java",
-          "src/main/resources/assets/coffee/blockstates/coffee_machine_empty_mug.json",
-          "src/main/resources/assets/coffee/models/block/coffee_machine_empty_mug.json"
+          "src/main/resources/assets/coffee/blockstates/coffee_machine_empty_mug.json"
         ]
       },
       "path": "~/Coffee Machine"
@@ -697,8 +700,8 @@
       "registry_name": "full_coffee_mug",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/coffeeplus/item/FullCoffeeMugItem.java",
-          "src/main/resources/assets/coffee/models/item/full_coffee_mug.json"
+          "src/main/resources/assets/coffee/models/item/full_coffee_mug.json",
+          "src/main/java/net/mcreator/coffeeplus/item/FullCoffeeMugItem.java"
         ]
       },
       "path": "~/Coffee Mug"
@@ -712,8 +715,8 @@
       "registry_name": "sugary_coffee",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/coffeeplus/item/SugaryCoffeeItem.java",
-          "src/main/resources/assets/coffee/models/item/sugary_coffee.json"
+          "src/main/resources/assets/coffee/models/item/sugary_coffee.json",
+          "src/main/java/net/mcreator/coffeeplus/item/SugaryCoffeeItem.java"
         ]
       },
       "path": "~/Sugary Coffee"
@@ -727,8 +730,8 @@
       "registry_name": "milky_coffee",
       "metadata": {
         "files": [
-          "src/main/resources/assets/coffee/models/item/milky_coffee.json",
-          "src/main/java/net/mcreator/coffeeplus/item/MilkyCoffeeItem.java"
+          "src/main/java/net/mcreator/coffeeplus/item/MilkyCoffeeItem.java",
+          "src/main/resources/assets/coffee/models/item/milky_coffee.json"
         ]
       },
       "path": "~/Milky Coffee"
@@ -742,8 +745,8 @@
       "registry_name": "sugary_milky_coffee",
       "metadata": {
         "files": [
-          "src/main/resources/assets/coffee/models/item/sugary_milky_coffee.json",
-          "src/main/java/net/mcreator/coffeeplus/item/SugaryMilkyCoffeeItem.java"
+          "src/main/java/net/mcreator/coffeeplus/item/SugaryMilkyCoffeeItem.java",
+          "src/main/resources/assets/coffee/models/item/sugary_milky_coffee.json"
         ]
       },
       "path": "~/Sugary Milky Coffee"
@@ -757,8 +760,8 @@
       "registry_name": "hand_grinder",
       "metadata": {
         "files": [
-          "src/main/resources/assets/coffee/models/item/hand_grinder.json",
-          "src/main/java/net/mcreator/coffeeplus/item/HandGrinderItem.java"
+          "src/main/java/net/mcreator/coffeeplus/item/HandGrinderItem.java",
+          "src/main/resources/assets/coffee/models/item/hand_grinder.json"
         ]
       },
       "path": "~/HandGrinder"
@@ -801,8 +804,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/coffeeplus/block/GrinderBlock.java",
-          "src/main/resources/assets/coffee/blockstates/grinder.json",
           "src/main/resources/assets/coffee/models/block/grinder.json",
+          "src/main/resources/assets/coffee/blockstates/grinder.json",
           "src/main/resources/assets/coffee/models/item/grinder.json",
           "src/main/java/net/mcreator/coffeeplus/block/entity/GrinderBlockEntity.java"
         ]
@@ -818,9 +821,9 @@
       "registry_name": "grinding_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/coffeeplus/world/inventory/GrindingGUIMenu.java",
           "src/main/java/net/mcreator/coffeeplus/network/GrindingGUIButtonMessage.java",
-          "src/main/java/net/mcreator/coffeeplus/client/gui/GrindingGUIScreen.java"
+          "src/main/java/net/mcreator/coffeeplus/client/gui/GrindingGUIScreen.java",
+          "src/main/java/net/mcreator/coffeeplus/world/inventory/GrindingGUIMenu.java"
         ]
       },
       "path": "~/Coffee Grinder"
@@ -1039,9 +1042,9 @@
       "item.coffeeplus.full_coffee_mug": "Full Coffee Mug",
       "item.coffee.hand_grinder": "Hand Grinder",
       "block.coffeeplus.coffee_tree_stage_3": "Coffee Tree",
-      "item.coffeeplus.hand_grinder": "Hand Grinder",
-      "block.coffeeplus.coffee_tree_stage_2": "Coffee Tree",
       "advancements.brew_coffee_advancement.descr": "Drink coffee for the first time",
+      "block.coffeeplus.coffee_tree_stage_2": "Coffee Tree",
+      "item.coffeeplus.hand_grinder": "Hand Grinder",
       "block.coffeeplus.coffee_tree_stage_1": "Coffee Tree",
       "block.coffeeplus.coffee_tree_stage_0": "Coffee Tree",
       "item_group.coffee.coffee_plus": "Coffee+",
@@ -1165,5 +1168,5 @@
     "modElementsPackage": "net.mcreator.coffeeplus",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300224119
+  "mcreatorVersion": 202300336712
 }
