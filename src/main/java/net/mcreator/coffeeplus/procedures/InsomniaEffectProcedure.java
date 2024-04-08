@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 public class InsomniaEffectProcedure {
 	@SubscribeEvent
 	public static void onPlayerInBed(PlayerSleepInBedEvent event) {
-		execute(event, event.getEntity().level, event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getEntity());
+		execute(event, event.getEntity().level(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -33,7 +33,7 @@ public class InsomniaEffectProcedure {
 			Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x, y, z), null);
 			world.destroyBlock(_pos, false);
 		}
-		if (entity instanceof Player _player && !_player.level.isClientSide())
+		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal("You can't sleep after drinking coffee"), true);
 	}
 }

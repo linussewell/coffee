@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.coffeeplus.world.inventory.CoffeeMachineGUIMenu;
 import net.mcreator.coffeeplus.network.CoffeeMachineGUIButtonMessage;
@@ -14,7 +15,6 @@ import net.mcreator.coffeeplus.CoffeeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachineGUIMenu> {
@@ -38,31 +38,26 @@ public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachin
 	private static final ResourceLocation texture = new ResourceLocation("coffee:textures/screens/coffee_machine_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/arrow.png"));
-		this.blit(ms, this.leftPos + 76, this.topPos + 26, 0, 0, 22, 15, 22, 15);
+		guiGraphics.blit(new ResourceLocation("coffee:textures/screens/arrow.png"), this.leftPos + 76, this.topPos + 26, 0, 0, 22, 15, 22, 15);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/ground_coffee_blank.png"));
-		this.blit(ms, this.leftPos + 34, this.topPos + 26, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("coffee:textures/screens/ground_coffee_blank.png"), this.leftPos + 34, this.topPos + 26, 0, 0, 16, 16, 16, 16);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/empty_mug_blank.png"));
-		this.blit(ms, this.leftPos + 34, this.topPos + 53, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("coffee:textures/screens/empty_mug_blank.png"), this.leftPos + 34, this.topPos + 53, 0, 0, 16, 16, 16, 16);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("coffee:textures/screens/full_mug_blank.png"));
-		this.blit(ms, this.leftPos + 124, this.topPos + 26, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("coffee:textures/screens/full_mug_blank.png"), this.leftPos + 124, this.topPos + 26, 0, 0, 16, 16, 16, 16);
 
 		RenderSystem.disableBlend();
 	}
@@ -82,8 +77,8 @@ public class CoffeeMachineGUIScreen extends AbstractContainerScreen<CoffeeMachin
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, Component.translatable("gui.coffee.coffee_machine_gui.label_coffee_machine"), 50, 7, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.coffee.coffee_machine_gui.label_coffee_machine"), 50, 7, -12829636, false);
 	}
 
 	@Override

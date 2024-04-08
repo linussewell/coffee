@@ -20,7 +20,7 @@ public class InsomniaMobEffect extends MobEffect {
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-		InsomniaEffectProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		InsomniaEffectProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

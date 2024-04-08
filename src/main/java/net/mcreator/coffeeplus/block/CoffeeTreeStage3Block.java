@@ -6,8 +6,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.material.MaterialColor;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -38,7 +37,7 @@ import net.mcreator.coffeeplus.block.entity.CoffeeTreeStage3BlockEntity;
 
 public class CoffeeTreeStage3Block extends Block implements EntityBlock {
 	public CoffeeTreeStage3Block() {
-		super(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT).sound(SoundType.SWEET_BERRY_BUSH).instabreak().noCollission().noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false).noLootTable());
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.SWEET_BERRY_BUSH).instabreak().noCollission().noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false).noLootTable());
 	}
 
 	@Override

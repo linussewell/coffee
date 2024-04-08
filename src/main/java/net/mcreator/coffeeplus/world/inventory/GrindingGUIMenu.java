@@ -42,7 +42,7 @@ public class GrindingGUIMenu extends AbstractContainerMenu implements Supplier<M
 	public GrindingGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
 		super(CoffeeModMenus.GRINDING_GUI.get(), id);
 		this.entity = inv.player;
-		this.world = inv.player.level;
+		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(2);
 		BlockPos pos = null;
 		if (extraData != null) {

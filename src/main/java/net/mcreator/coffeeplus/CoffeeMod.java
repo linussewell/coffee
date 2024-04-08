@@ -29,6 +29,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.coffeeplus.init.CoffeeModTabs;
 import net.mcreator.coffeeplus.init.CoffeeModPotions;
 import net.mcreator.coffeeplus.init.CoffeeModMobEffects;
 import net.mcreator.coffeeplus.init.CoffeeModMenus;
@@ -56,15 +57,15 @@ public class CoffeeMod {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		CoffeeModBlocks.REGISTRY.register(bus);
+		CoffeeModBlockEntities.REGISTRY.register(bus);
 		CoffeeModItems.REGISTRY.register(bus);
 
-		CoffeeModBlockEntities.REGISTRY.register(bus);
-
+		CoffeeModTabs.REGISTRY.register(bus);
+		CoffeeModFeatures.REGISTRY.register(bus);
 		CoffeeModMobEffects.REGISTRY.register(bus);
 		CoffeeModPotions.REGISTRY.register(bus);
-		CoffeeModMenus.REGISTRY.register(bus);
-		CoffeeModFeatures.REGISTRY.register(bus);
 
+		CoffeeModMenus.REGISTRY.register(bus);
 	}
 
 	private static final String PROTOCOL_VERSION = "1";

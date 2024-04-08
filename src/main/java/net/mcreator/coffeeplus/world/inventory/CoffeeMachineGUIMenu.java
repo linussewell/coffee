@@ -42,7 +42,7 @@ public class CoffeeMachineGUIMenu extends AbstractContainerMenu implements Suppl
 	public CoffeeMachineGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
 		super(CoffeeModMenus.COFFEE_MACHINE_GUI.get(), id);
 		this.entity = inv.player;
-		this.world = inv.player.level;
+		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(3);
 		BlockPos pos = null;
 		if (extraData != null) {
